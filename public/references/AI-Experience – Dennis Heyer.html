@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!-- saved from url=(0142)https://agent-cdn.minimax.io/cdn_upload/20260327/490636431311593473/378062449594484/195945_c946/workspace/scripts/ai-experience-bewerbung.html -->
+<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Experience – Dennis Heyer</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: #0a0a0f;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 3rem 1.5rem;
+    }
+
+    .container { max-width: 720px; margin: 0 auto; }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #f8fafc;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.03em;
+    }
+    .subtitle { color: #64748b; font-size: 0.9rem; margin-bottom: 3rem; }
+
+    .section { margin-bottom: 2.5rem; }
+
+    .section-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-title::before {
+      content: '';
+      width: 3px;
+      height: 14px;
+      background: #60a5fa;
+      border-radius: 2px;
+    }
+
+    .item { margin-bottom: 1rem; }
+    .item-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 0.2rem;
+    }
+    .item-desc {
+      font-size: 0.8rem;
+      color: #64748b;
+      line-height: 1.55;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #1e293b;
+      color: #cbd5e1;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      margin-right: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+    .tag.blue { background: #1e3a5f; border-color: #1d4ed8; color: #93c5fd; }
+    .tag.green { background: #1a2e1f; border-color: #166534; color: #86efac; }
+    .tag.purple { background: #2a1f3d; border-color: #6b21a8; color: #c4b5fd; }
+    .tag.orange { background: #2a1f0f; border-color: #92400e; color: #fcd34d; }
+    .tag.teal { background: #0f2a2a; border-color: #0f766e; color: #5eead4; }
+    .tag.rose { background: #2a1118; border-color: #9f1239; color: #fda4af; }
+    .tag.gray { background: #1a1a2a; border-color: #3f3f5a; color: #a8b4c8; }
+
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 2.5rem 0; }
+
+    .footer { margin-top: 3rem; color: #475569; font-size: 0.75rem; }
+  </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+  <div class="container">
+
+    <h1>AI-Experience</h1>
+    <p class="subtitle">Praktische Kenntnisse aus eigenen Projekten und im Einsatz als AI-Assistent</p>
+
+    <!-- Multi-Agent System -->
+    <div class="section">
+      <div class="section-title">Multi-Agent-System</div>
+
+      <div class="item">
+        <div class="item-title">Orchestrierung mehrerer spezialisierter AI-Agenten</div>
+        <div class="item-desc">
+          Eigenes Multi-Agent-System mit Architect-Agent (Strategische Planung und Delegation),
+          ContextOrganizer (Wissensmanagement), TaskManager (Task-Zerlegung), CoderAgent (Implementierung),
+          TestEngineer (Tests), CodeReviewer (Qualitätssicherung), BuildAgent (Type-Check und Build).
+          Architektur mit klarer Rollentrennung und Genehmigungs-Gates zwischen Planung und Ausführung.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Sub-Agent-Management und parallele Task-Verteilung</div>
+        <div class="item-desc">
+          BatchExecutor für gleichzeitige Ausführung von mehreren CoderAgent-Tasks.
+          Jeder Sub-Agent erhält kontextspezifische Prompts mit Projektstandards, CI-Requirements
+          und CI/CD-Pipeline-Informationen. Ergebnisse werden zentral gesammelt, dedupliziert und validiert.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title" style="background-color: transparent;">MCP-Tool-Integration (Model Context Protocol)</div>
+        <div class="item-desc">
+          context7 MCP für aktuelle externe Dokumentation (React, FastAPI, Pydantic).
+          GitHub MCP für PR-Reviews, Issue-Management und automatisierte Code-Kommentare.
+          playwright MCP für UI-Validierung nach Frontend-Implementierungen.
+        </div>
+      </div>
+    </div>
+
+    <!-- Modelle -->
+    <div class="section">
+      <div class="section-title">Modelle &amp; APIs</div>
+      <div class="tag-grid">
+        <span class="tag blue">GPT-4o / GPT-4o-mini</span>
+        <span class="tag blue">Claude</span>
+        <span class="tag blue">MiniMax (Orbit)</span>
+        <span class="tag blue">OpenAI Codex</span>
+        <span class="tag blue">OpenCode</span>
+        <span class="tag blue">Ollama (self-hosted)</span>
+        <span class="tag blue">embeddinggemma</span>
+        <span class="tag blue">translategemma3</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Prompt Engineering -->
+    <div class="section">
+      <div class="section-title">Prompt Engineering</div>
+
+      <div class="item">
+        <div class="item-title">System-Prompts mit Rollen und Genehmigungs-Gates</div>
+        <div class="item-desc">
+         Definierte Rollen-Prompts (Architect: Planer und Delegierer, CoderAgent: Implementierer,
+          TestEngineer: Tester). Genehmigungs-Gates vor jeder Ausführung: User muss Blueprint
+          freigeben, bevor Build-Phase startet. Klare Constraint-Definitionen verhindern
+          ungewollte Aktionen.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Chain-of-Thought und strukturierte Reasoning-Patterns</div>
+        <div class="item-desc">
+          Architect-Agent denkt in definierten Phasen (PLAN: verstehen, entdecken, Blueprints
+          erstellen; BUILD: initialisieren, delegieren, validieren). Mehrstufige
+          Entscheidungsfindung mit expliziten Checkpoints vor jedem nächsten Schritt.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Prompt-Templating und kontextbezogene Generierung</div>
+        <div class="item-desc">
+          Wiederverwendbare Prompt-Vorlagen für Sub-Agent-Delegation. Jeder Delegation
+          enthält: Kontext-Pfade, Session-Informationen, CI-Requirements, Standards-Summary
+          und erwartetes Ergebnis. ContextOrganizer generiert standardisierte
+          Kontext-Dateien nach MVI-Prinzip.
+        </div>
+      </div>
+
+      <div class="tag-grid" style="margin-top:0.75rem">
+        <span class="tag">Context Management</span>
+        <span class="tag">Few-shot Prompting</span>
+        <span class="tag">Chain-of-Thought</span>
+        <span class="tag">System-Prompts</span>
+        <span class="tag">Prompt-Templating</span>
+        <span class="tag">Output-Structuring</span>
+        <span class="tag">Prompt-Iteration</span>
+      </div>
+    </div>
+
+    <!-- RAG -->
+    <div class="section">
+      <div class="section-title">RAG &amp; Such-Pipelines</div>
+
+      <div class="item">
+        <div class="item-title">Hybrid-Suche für Code-Kontext</div>
+        <div class="item-desc">
+          ContextScout findet relevante Projekt-Dateien für jede Aufgabe.
+          Hybride Pipeline: Regelbasiertes Keyword-Matching + Embedding Similarity
+          (Cosine-Similarity) für automatische Kontext-Zuordnung.
+         
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Embedding-Caching und Performance-Optimierung</div>
+        <div class="item-desc">
+          embeddinggemma für semantische Ähnlichkeitssuche in Exercise-Klassifikation.
+          Vorberechnete Embeddings mit Caching für stabile Performance.
+          Confidence Scoring bestimmt die Zuverlässigkeit der Klassifikation.
+        </div>
+      </div>
+
+      <div class="tag-grid" style="margin-top:0.5rem">
+        <span class="tag green">Hybride Sucharchitektur</span>
+        <span class="tag green">Embedding Similarity</span>
+        <span class="tag green">Cosine-Similarity</span>
+        <span class="tag green">Vektor-DB</span>
+        <span class="tag green">Embedding-Caching</span>
+        <span class="tag green">Chunking-Strategien</span>
+      </div>
+    </div>
+
+    <!-- Agentic Patterns -->
+    <div class="section">
+      <div class="section-title">Agentic AI Patterns</div>
+
+      <div class="item">
+        <div class="item-title">Multi-Agent-Workflows mit definierter Reihenfolge</div>
+        <div class="item-desc">
+          Komplexe Features werden in Tasks zerlegt: ContextScout (Kontext finden) →
+          Architect (Plan erstellen und genehmigen lassen) → TaskManager (Tasks strukturieren)
+          → BatchExecutor (parallel implementieren) → CodeReviewer (prüfen) →
+          playwright (UI testen) → BuildAgent (final validieren).
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Agent-Turn-Pattern für Cron-getriggerte Automatisierung</div>
+        <div class="item-desc">
+          Isolierte AI-Sessions für zeitversetzte Aufgaben. Cron-Job löst
+          Agent-Turn aus → Sub-Agent sammelt Daten, führt Recherchen durch,
+          sendet Ergebnisse per Telegram. Timeout-Handling und Graceful Degradation
+          bei API-Fehlern oder langsamen Antworten.
+        </div>
+      </div>
+
+      <div class="tag-grid" style="margin-top:0.5rem">
+        <span class="tag purple">Sub-Agent-Orchestrierung</span>
+        <span class="tag purple">Multi-Agent-Workflows</span>
+        <span class="tag purple">Agent-Turn-Pattern</span>
+        <span class="tag purple">Tool-Use</span>
+        <span class="tag purple">Timeout-Handling</span>
+        <span class="tag purple">Graceful Degradation</span>
+      </div>
+    </div>
+
+    <!-- Production -->
+    <div class="section">
+      <div class="section-title">AI-Production</div>
+
+      <div class="item">
+        <div class="item-title">CI/CD-Integration mit AI-Validierung</div>
+        <div class="item-desc">
+          Nach jeder Implementierung: Frontend (npm lint + typecheck + test + build),
+          Backend (ruff check + format-check + pytest). Security-Audit (npm audit + pip-audit).
+          Alle Checks müssen local bestanden werden bevor GitHub Actions getriggert werden.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Modell-Evaluation und Benchmarking</div>
+        <div class="item-desc">
+          Vergleich von Output-Qualität, Geschwindigkeit und Kosten zwischen
+          OpenAI, Claude, MiniMax und Ollama (self-hosted). Trade-off-Analyse
+          (Kosten vs. Qualität vs. Latenz) für verschiedene Use-Cases.
+          Ollama für ressourcenintensive Embedding-Operationen in Docker Compose.
+        </div>
+      </div>
+
+      <div class="tag-grid" style="margin-top:0.5rem">
+        <span class="tag orange">JSON-Output-Parsing</span>
+        <span class="tag orange">Error-Recovery</span>
+        <span class="tag orange">Retry-Logik</span>
+        <span class="tag orange">Token-Monitoring</span>
+        <span class="tag orange">Offline-Fallback</span>
+        <span class="tag orange">Modell-Evaluation</span>
+        <span class="tag orange">Benchmarking</span>
+      </div>
+    </div>
+
+    <!-- Eigenes System -->
+    <div class="section">
+      <div class="section-title">Eigenes AI-System (OpenClaw/MaxClaw)</div>
+
+      <div class="item">
+        <div class="item-title">Persönlicher AI-Assistent mit täglicher Automatisierung</div>
+        <div class="item-desc">
+          Täglicher AI-gestützter Job-Scan (parallele Web-Suche, Matching gegen Profil).
+          Wöchentliche Deal-Alerts für Supermärkte (mit Preisvergleich).
+          Stündlicher Tankpreis-Check mit automatischem Alarm unter Schwellwert.
+          Alles gesteuert via Cron-Jobs mit isolierten AI-Agent-Sessions.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Tool-Building für individuelle Automatisierung</div>
+        <div class="item-desc">
+          Eigenständige Tools für wiederkehrende AI-Aufgaben gebaut:
+          Deal-Tracker (Supermarkt-Preisalarm), Job-Scanner (deutsche Tech-Jobbörsen),
+          Tankpreis-Check. MCP-Server für externe Tool-Integration.
+          Telegram-Bot für Push-Benachrichtigungen direkt aufs Handy.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">AI-Agent als Coding-Assistent für eigene Projekte</div>
+        <div class="item-desc">
+          Nutzung von OpenAI Codex, Claude und MiniMax für Code-Reviews,
+          Boilerplate-Generierung und Architektur-Entscheidungen.
+          AI-gestütztes Refactoring eigener Projekte mit kontextbezogener
+          Code-Analyse und Vorschlägen.
+        </div>
+      </div>
+
+      <div class="tag-grid" style="margin-top:0.5rem">
+        <span class="tag teal">Persönlicher AI-Assistent</span>
+        <span class="tag teal">Cron-Job-Orchestrierung</span>
+        <span class="tag teal">Sub-Agent-Management</span>
+        <span class="tag teal">MCP-Integration</span>
+        <span class="tag teal">Telegram-Bot</span>
+        <span class="tag teal">Tool-Building</span>
+        <span class="tag teal">Coding-Assistent</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Ollama Production -->
+    <div class="section">
+      <div class="section-title">Ollama Self-Hosted</div>
+
+      <div class="item">
+        <div class="item-desc">
+          Self-hosted Ollama-Instanz für Fitness-App.
+          embeddinggemma für Ähnlichkeitssuche in Exercise-Klassifikation.
+          translategemma3 für mehrsprachige Textverarbeitung (Deutsch/Englisch).
+          Health-Checks und Ready-Status für Production-Betrieb.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div state="voice" class="placeholder-icon" id="tts-placeholder-icon" title="Click to show TTS button" style="background-image: url(&quot;chrome-extension://ifnfkcmbdaelhfkpkoncangcnhieanmj/data/content_script/icons/voice.png&quot;); top: 373.263px; left: 347.669px;"><canvas width="36" height="36" class="loading-circle" id="text-to-speech-loader" style="display: none;"></canvas></div></body></html>

@@ -6,33 +6,14 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "Fitness Tracker App",
+    title: "Fitness Coaching Engine",
     description:
-      "Track workouts, nutrition, and progress with a comprehensive fitness tracking application. Features include workout logging, meal planning, and progress visualization.",
-    techStack: ["Spring Boot", "React", "PostgreSQL", "Docker"],
-    link: "#",
-  },
-  {
-    title: "API Backend Service",
-    description:
-      "RESTful APIs with authentication and authorization. Built with scalability and performance in mind, featuring comprehensive documentation and testing.",
-    techStack: ["Java", "Spring Boot", "REST APIs", "PostgreSQL"],
-    link: "#",
-  },
-  {
-    title: "AI Tool",
-    description:
-      "AI-powered productivity tool leveraging OpenAI APIs. Automates repetitive tasks and provides intelligent suggestions to improve workflow efficiency.",
-    techStack: ["Python", "FastAPI", "OpenAI", "Docker"],
-    link: "#",
-  },
-  {
-    title: "Fullstack Web App",
-    description:
-      "Modern full-stack application with responsive design, real-time features, and cloud deployment. Built with best practices and clean architecture.",
-    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Docker"],
-    link: "#",
-  },
+      "Full-Stack PWA für Kraftathleten. KI-gestützte Übungs-Normalisierung (Hybrid: Embeddings + LLM), deterministische Analytics (1RM, Volume, Plateau-Erkennung), Offline-First mit Workbox. JWT/Argon2 Auth, PostgreSQL mit Flyway, Docker Compose, GitHub Actions CI/CD.",
+    techStack: ["React 19", "TypeScript", "FastAPI", "PostgreSQL", "Ollama", "Docker", "Workbox", "TanStack Query"],
+    imageUrl: "/assets/fitness.png",
+    link: "https://fitness.dennisheyer.dev",
+    highlight: "Active Project"
+  }
 ];
 
 const containerVariants = {

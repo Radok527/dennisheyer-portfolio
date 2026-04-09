@@ -1,8 +1,10 @@
 import {
   Navbar,
   HeroSection,
-  TechSection,
   ProjectsSection,
+  ExperienceSection,
+  AIExperienceSection,
+  TechSection,
   AboutSection,
   ContactSection,
 } from "./components";
@@ -14,6 +16,8 @@ export default function Home() {
       <main>
         <HeroSection />
         <ProjectsSection />
+        <ExperienceSection />
+        <AIExperienceSection />
         <TechSection />
         <AboutSection />
         <ContactSection />

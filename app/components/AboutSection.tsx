@@ -22,48 +22,31 @@ export default function AboutSection() {
         className="relative z-10 max-w-3xl mx-auto"
       >
         <div className="bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 md:p-12">
-          <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+          <div className="space-y-5 text-lg text-gray-300 leading-relaxed">
             <p>
-              I&apos;m a backend developer specializing in building scalable,
-              well-architected systems. With expertise in{" "}
-              <span className="text-green-400 font-medium">
-                Java, Spring Boot, and REST APIs
-              </span>
-              , I focus on creating robust backend solutions that power modern
-              applications.
+              Java Backend Engineer mit 4+ Jahren Erfahrung in Enterprise-Umgebungen.
+              Spezialisiert auf <span className="text-green-400 font-medium">Spring Boot</span> Backends,
+              <span className="text-green-400 font-medium"> React/TypeScript</span> Frontends
+              und <span className="text-green-400 font-medium">AI-Integration</span> mit
+              Embeddings, Semantic Search und LLMs.
             </p>
             <p>
-              My passion lies in writing clean, maintainable code and designing
-              systems that can grow with business needs. I believe in
-              continuous learning and staying up-to-date with emerging
-              technologies and best practices.
+              Fundierte Kenntnisse im gesamten Software-Lifecycle: Konzeption,
+              Implementierung, Deployment und Monitoring. Analytisch, strukturiert
+              und lösungsorientiert.
             </p>
             <p>
-              When I&apos;m not coding, you can find me exploring new
-              technologies, contributing to open-source projects, or sharing my
-              knowledge with the developer community.
+              Standort: <span className="text-green-400 font-medium">Hannover, Deutschland</span>
             </p>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-zinc-800">
+          <div className="grid grid-cols-1 gap-6 mt-12 pt-8 border-t border-zinc-800">
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-green-400">
-                3+
+                4+
               </p>
               <p className="text-gray-500 text-sm mt-1">Years Experience</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-green-400">
-                10+
-              </p>
-              <p className="text-gray-500 text-sm mt-1">Projects Completed</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-green-400">
-                5+
-              </p>
-              <p className="text-gray-500 text-sm mt-1">Technologies</p>
             </div>
           </div>
         </div>

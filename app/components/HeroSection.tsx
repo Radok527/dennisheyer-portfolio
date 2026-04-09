@@ -62,15 +62,14 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-lg"
             >
-              Backend Developer specializing in scalable systems, Spring Boot,
-              and REST APIs.
+              Java Backend Engineer mit Schwerpunkt Spring Boot, React, und KI-Integration. 4+ Jahre Erfahrung in Enterprise-Umgebungen.
             </motion.p>
 
             <motion.p
               variants={itemVariants}
               className="text-gray-500 text-lg"
             >
-              Building clean, well-architected software that makes a difference.
+              Hannover, Deutschland
             </motion.p>
 
             <motion.div
@@ -109,26 +108,24 @@ export default function HeroSection() {
                 {/* Terminal content */}
                 <div className="p-6 font-mono text-sm space-y-3">
                   <p className="text-gray-500">$ whoami</p>
-                  <p className="text-green-400">dennis_heyer</p>
+                  <p className="text-green-400">Dennis Heyer</p>
                   <p className="text-gray-500">$ cat skills.txt</p>
                   <div className="space-y-1">
                     <p className="text-white">
                       <span className="text-green-400">→</span> Java / Spring
-                      Boot
+                      Boot (Backend)
                     </p>
                     <p className="text-white">
-                      <span className="text-green-400">→</span> TypeScript /
-                      React
+                      <span className="text-green-400">→</span> React / TypeScript (Frontend)
                     </p>
                     <p className="text-white">
-                      <span className="text-green-400">→</span> Next.js
+                      <span className="text-green-400">→</span> Python / FastAPI (AI)
                     </p>
                     <p className="text-white">
-                      <span className="text-green-400">→</span> PostgreSQL /
-                      Docker
+                      <span className="text-green-400">→</span> Docker / Kubernetes (DevOps)
                     </p>
                     <p className="text-white">
-                      <span className="text-green-400">→</span> REST APIs
+                      <span className="text-green-400">→</span> Ollama / Embeddings (AI)
                     </p>
                   </div>
                   <p className="text-gray-500">$ _</p>

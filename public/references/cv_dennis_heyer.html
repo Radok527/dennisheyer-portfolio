@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dennis Heyer - Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #3182ce;
+            --text-dark: #1a202c;
+            --text-medium: #4a5568;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --border: #e2e8f0;
+            --success: #38a169;
+            --project-highlight: #553c9a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #fff;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 50px;
+        }
+
+        /* Header */
+        .header {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .name-section h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 13px;
+            color: var(--text-medium);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--accent);
+        }
+
+        .contact-item a {
+            color: var(--text-medium);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: flex-end;
+            margin-bottom: 5px;
+        }
+
+        .location svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Summary */
+        .summary {
+            background: var(--bg-light);
+            padding: 20px 25px;
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-medium);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 15px 18px;
+            border-radius: 8px;
+        }
+
+        .skill-category-title {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            font-size: 12px;
+            background: #fff;
+            color: var(--text-medium);
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .experience-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+        }
+
+        .experience-company {
+            font-size: 14px;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .experience-project {
+            font-size: 12px;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        .experience-date {
+            font-size: 13px;
+            color: var(--text-light);
+            white-space: nowrap;
+            background: var(--bg-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .experience-bullets {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .experience-bullets li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-medium);
+            font-size: 13px;
+        }
+
+        .experience-bullets li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .experience-bullets li strong {
+            color: var(--text-dark);
+        }
+
+        /* Project Section */
+        .project-section {
+            background: linear-gradient(135deg, #faf5ff 0%, #f0f4ff 100%);
+            border: 1px solid #e9d8fd;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--project-highlight);
+            margin-bottom: 5px;
+        }
+
+        .project-badge {
+            font-size: 11px;
+            background: var(--project-highlight);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .project-subtitle {
+            font-size: 14px;
+            color: var(--text-medium);
+            margin-bottom: 15px;
+        }
+
+        .project-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .project-tech-tag {
+            font-size: 11px;
+            background: #fff;
+            color: var(--project-highlight);
+            padding: 3px 10px;
+            border-radius: 15px;
+            border: 1px solid #d6bcfa;
+            font-weight: 500;
+        }
+
+        .project-bullets {
+            list-style: none;
+        }
+
+        .project-bullets li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-medium);
+            font-size: 13px;
+        }
+
+        .project-bullets li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background: var(--project-highlight);
+            border-radius: 50%;
+        }
+
+        .project-bullets li strong {
+            color: var(--text-dark);
+        }
+
+        /* Feature Grid for Projects */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .feature-item {
+            background: rgba(255,255,255,0.7);
+            padding: 12px 15px;
+            border-radius: 8px;
+        }
+
+        .feature-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--project-highlight);
+            margin-bottom: 5px;
+        }
+
+        .feature-desc {
+            font-size: 12px;
+            color: var(--text-medium);
+        }
+
+        /* Education */
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .education-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .education-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        .education-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .education-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .education-school {
+            font-size: 13px;
+            color: var(--secondary);
+        }
+
+        .education-date {
+            font-size: 13px;
+            color: var(--text-light);
+            background: var(--bg-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* languages */
+        .languages-grid {
+            display: flex;
+            gap: 20px;
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .language-flag {
+            font-size: 24px;
+        }
+
+        .language-name {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .language-level {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                font-size: 12px;
+            }
+
+            .container {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            .project-section {
+                background: var(--bg-light) !important;
+                border: 1px solid var(--border) !important;
+            }
+
+            .skill-tag:hover {
+                border-color: var(--border);
+                color: var(--text-medium);
+            }
+
+            .section-title {
+                border-bottom: 1px solid var(--border);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+            }
+
+            .header-right {
+                text-align: left;
+                margin-top: 15px;
+            }
+
+            .location {
+                justify-content: flex-start;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .experience-date {
+                align-self: flex-start;
+            }
+
+            .name-section h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="name-section">
+                    <h1>Dennis Heyer</h1>
+                    <div class="title">Software Engineer / Full-Stack Developer</div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                            </svg>
+                            <a href="mailto:REDACTED">REDACTED</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            <a href="https://www.linkedin.com/in/dennis-heyer-4a92a6332" target="_blank">linkedin.com/in/dennis-heyer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="location">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Hannover, Deutschland
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <line x1="10" y1="9" x2="8" y2="9"></line>
+                </svg>
+                Profil
+            </h2>
+            <div class="summary">
+                Erfahrener Java Backend Engineer mit über vier Jahren Erfahrung in Enterprise-Umgebungen. Schwerpunkt: Spring Boot, Microservices, Docker & Kubernetes. Fundierte Kenntnisse im gesamten Software-Lifecycle – von Konzeption und Implementierung bis Deployment, Monitoring und Betrieb. Analytisch, strukturiert und lösungsorientiert. Übersetzt komplexe Anforderungen in robuste, wartbare Software und arbeitet eng mit Product Ownern und Stakeholdern zusammen.
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+                Technische Kompetenzen
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-title">Backend</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java (11-21)</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">Python 3.11+</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">OpenAPI/Swagger</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Frontend & PWA</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React 18</span>
+                        <span class="skill-tag">TypeScript 5</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">Vite</span>
+                        <span class="skill-tag">TailwindCSS v4</span>
+                        <span class="skill-tag">Workbox (PWA)</span>
+                        <span class="skill-tag">Recharts</span>
+                        <span class="skill-tag">i18n</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">AI & Embeddings</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Ollama (LLM)</span>
+                        <span class="skill-tag">Embeddings</span>
+                        <span class="skill-tag">Semantic Search</span>
+                        <span class="skill-tag">Confidence Scoring</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">DevOps & Datenbanken</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Docker Compose</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Helm</span>
+                        <span class="skill-tag">Nginx</span>
+                        <span class="skill-tag">PostgreSQL 16</span>
+                        <span class="skill-tag">Flyway</span>
+                        <span class="skill-tag">Jenkins</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Auth & Security</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JWT</span>
+                        <span class="skill-tag">zxcvbn</span>
+                        <span class="skill-tag">IndexedDB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Methoden</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Agile/Scrum</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Performance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section">
+            <h2 class="section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                </svg>
+                Eigenes Projekt
+            </h2>
+
+            <div class="project-section">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Fitness Coaching Engine</div>
+                        <div class="project-subtitle">Full-Stack PWA für Kraftathleten – Semantische Übungs-Normalisierung mit KI und deterministischer Analytics</div>
+                    </div>
+                    <div class="project-badge">Seit 02/2026</div>
+                </div>
+
+                <div class="project-tech-stack">
+                    <span class="project-tech-tag">Python/FastAPI</span>
+                    <span class="project-tech-tag">React 18</span>
+                    <span class="project-tech-tag">TypeScript 5</span>
+                    <span class="project-tech-tag">PostgreSQL 16</span>
+                    <span class="project-tech-tag">Ollama (LLM)</span>
+                    <span class="project-tech-tag">Docker</span>
+                    <span class="project-tech-tag">PWA/Workbox</span>
+                    <span class="project-tech-tag">TanStack Query</span>
+                    <span class="project-tech-tag">TailwindCSS</span>
+                    <span class="project-tech-tag">i18n</span>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-title">KI-Übungs-Normalisierung</div>
+                        <div class="feature-desc">Hybride Escalation Pipeline mit Embedding-Similarity, LLM-Translation-Fallback und Confidence-Scoring</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-title">Deterministische Analytics</div>
+                        <div class="feature-desc">Volume-Aggregation, 1RM (Epley), Push/Pull/Lower-Balance, Trend-Analyse, Plateau-Erkennung</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-title">Offline-First PWA</div>
+                        <div class="feature-desc">Service Worker (Workbox), IndexedDB, Background Sync, TanStack Query Persistence</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-title">Multi-User & RBAC</div>
+                        <div class="feature-desc">JWT-Auth, Argon2-Hashing, Role-based Access Control, Profil-Verwaltung</div>
+                    </div>
+                </div>
+
+                <ul class="project-bullets">
+                    <li><strong>Architektur:</strong> Schichtenarchitektur (API → Services → Analytics/Infrastructure → PostgreSQL) mit Multi-Worker Uvicorn</li>
+                    <li><strong>Offline-First:</strong> Lokale Dateneingabe priorisiert, automatische Sync bei Verbindung, Background Sync mit 24h Retry-Queue</li>
+                    <li><strong>PWA:</strong> Workbox Precaching, NetworkFirst/CacheFirst Strategien, Periodic Background Sync, Web Locks API</li>
+                    <li><strong>AI-Pipeline:</strong> Keyword Override → Native Embedding → Token-Overlap-Validation → LLM Translation → Review-Queue</li>
+                    <li><strong>Analytics:</strong> Rolling Volume, Relative Strength (Wilks-Score), Movement Pattern Tracking, Goal-aware Load Refinement</li>
+                    <li><strong>DevOps:</strong> Docker Compose (db + flyway + backend + frontend/Nginx), Healthchecks, automatische Migrations</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="section">
+            <h2 class="section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                Berufserfahrung
+            </h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Engineer</div>
+                        <div class="experience-company">adesso SE – BITMARCK - Projek</div>
+                        <div class="experience-project">Angebotsbestandsführungssystem (ABfs)</div>
+                    </div>
+                    <div class="experience-date">10/2025 – 02/2026</div>
+                </div>
+                <ul class="experience-bullets">
+                    <li>Entwicklung eines webbasierten <strong>Angebotsbestandsführungssystems</strong> für Enterprise-Projektsteuerung</li>
+                    <li><strong>Fullstack-Entwicklung</strong> mit Schwerpunkt Backend (Spring Boot, JPA, Hibernate) für stabile REST-Schnittstellen</li>
+                    <li>Aufbau und Strukturierung der <strong>Testumgebung</strong> inkl. Integrationstests zur Sicherstellung stabiler Schnittstellen</li>
+                    <li>Enge Abstimmung mit <strong>Product Ownern</strong> bei der Konzeption und Implementierung fachlicher Anforderungen</li>
+                    <li>Kontinuierliche Verbesserung von <strong>Codequalität und Testabdeckung</strong> in agiler Teamumgebung</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Engineer – Vendor Management System (VMS)</div>
+                        <div class="experience-company">fruuts GmbH</div>
+                    </div>
+                    <div class="experience-date">08/2021 – 05/2025</div>
+                </div>
+                <ul class="experience-bullets">
+                    <li><strong>Konzeption und Entwicklung</strong> eines modularen Vendor Management Systems zur Ablösung eines monolithischen Legacy-Systems durch <strong>Microservice-Architektur</strong></li>
+                    <li><strong>Entwurf und Implementierung</strong> von RESTful APIs (JSON-basiert) für Backend-Service-Kommunikation</li>
+                    <li><strong>Migration</strong> von Legacy-Komponenten in containerisierte Microservices mit <strong>Docker, Kubernetes und Helm</strong></li>
+                    <li><strong>Refactoring und Performanceoptimierung</strong> bestehender Services zur Verbesserung der Antwortzeiten</li>
+                    <li><strong>CI/CD-Integration</strong> mit Jenkins und automatisierter Qualitätssicherung (Unit-, Integrations-, E2E-Tests)</li>
+                    <li><strong>Einführung von Monitoring</strong> (Prometheus, Grafana) für Systemüberwachung und Skalierung</li>
+                    <li><strong>Technische Dokumentation</strong> und Wissenstransfer im Team</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Engineer – Streaming-Plattform (tshakka)</div>
+                        <div class="experience-company">fruuts GmbH</div>
+                    </div>
+                    <div class="experience-date">08/2021 – 05/2025</div>
+                </div>
+                <ul class="experience-bullets">
+                    <li><strong>Mitentwicklung</strong> einer hochverfügbaren Streaming-Plattform auf <strong>AWS-Basis</strong> mit Fokus auf Performance und Skalierbarkeit</li>
+                    <li><strong>Backend-Entwicklung</strong> mit Java und Spring Boot für Echtzeit-Medienverarbeitung</li>
+                    <li><strong>Performanceoptimierung</strong> zur Reduktion von Latenzzeiten für ~500 gleichzeitige Nutzer</li>
+                    <li><strong>Integration externer Dienste</strong> (z.B. Zahlungsabwicklung) in die Service-Architektur</li>
+                    <li><strong>Aufbau und Pflege</strong> automatisierter Tests zur Sicherstellung der Systemstabilität</li>
+                    <li><strong>Unterstützung</strong> bei Monitoring und Systemanalyse</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Engineer / Tester</div>
+                        <div class="experience-company">umlaut energy GmbH</div>
+                        <div class="experience-project">DA/RE Plattform (Redispatch 2.0)</div>
+                    </div>
+                    <div class="experience-date">08/2021 – 09/2022</div>
+                </div>
+                <ul class="experience-bullets">
+                    <li><strong>Mitwirkung</strong> an der DA/RE-Plattform – cloudbasierte IT-Plattform für Netzstabilisierung im <strong>Energiesektor</strong></li>
+                    <li><strong>Entwicklung</strong> von XML-basierten Schnittstellen für Redispatch 2.0-Prozesse</li>
+                    <li><strong>Automatisierte Testfälle</strong> (Schnittstellen-, BlackBox-, Integrations-Tests) für stabile Releases</li>
+                    <li><strong>Validierung</strong> und Sicherstellung der Datenkonsistenz zwischen Netzbetreibern für 46+ Nutzer deutschlandweit</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Engineer</div>
+                        <div class="experience-company">Since Idea Games</div>
+                        <div class="experience-project">Mobile Game „Cyber Hero"</div>
+                    </div>
+                    <div class="experience-date">01/2019 – 01/2021</div>
+                </div>
+                <ul class="experience-bullets">
+                    <li><strong>Co-Entwicklung</strong> des Mobile Games mit Fokus auf Performance-Optimierung und ressourcenschonende Implementierung</li>
+                    <li><strong>Entwicklung</strong> und Optimierung der zentralen Spiellogik</li>
+                    <li><strong>Automatisierte Benchmark-Datenbank</strong> zur Auswertung von Laufzeiten und Performance-Metriken</li>
+                    <li><strong>Optimierung</strong> des Ressourcen- und Speicherverbrauchs (RAM) für stabile Spielerfahrung</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+                Ausbildung
+            </h2>
+            <div class="education-item">
+                <div class="education-left">
+                    <div class="education-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="education-title">Fachinformatiker Anwendungsentwicklung (IHK)</div>
+                        <div class="education-school">PROFIL Hannover | Abschluss: Gut (81/100 Punkte)</div>
+                    </div>
+                </div>
+                <div class="education-date">08/2021</div>
+            </div>
+        </section>
+
+        <!-- languages -->
+        <section class="section">
+            <h2 class="section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                Sprachen
+            </h2>
+            <div class="languages-grid">
+                <div class="language-item">
+                    <span class="language-flag">🇩🇪</span>
+                    <div>
+                        <div class="language-name">Deutsch</div>
+                        <div class="language-level">Muttersprachlich (C2)</div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <span class="language-flag">🇬🇧</span>
+                    <div>
+                        <div class="language-name">Englisch</div>
+                        <div class="language-level">Fließend (B2)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
