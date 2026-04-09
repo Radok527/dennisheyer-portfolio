@@ -1,0 +1,10 @@
+export { default as Navbar } from "./Navbar";
+export { default as SectionWrapper } from "./SectionWrapper";
+export { default as TechBadge } from "./TechBadge";
+export { default as Button } from "./Button";
+export { default as ProjectCard } from "./ProjectCard";
+export { default as HeroSection } from "./HeroSection";
+export { default as TechSection } from "./TechSection";
+export { default as ProjectsSection } from "./ProjectsSection";
+export { default as AboutSection } from "./AboutSection";
+export { default as ContactSection } from "./ContactSection";
