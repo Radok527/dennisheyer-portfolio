@@ -71,7 +71,7 @@ export default function ProjectsSection() {
     <SectionWrapper
       id="projects"
       title="Projekte"
-      subtitle="Was ich so gebaut habe"
+      subtitle="Was ich entwickelt habe"
       className="bg-black"
     >
       <motion.div
