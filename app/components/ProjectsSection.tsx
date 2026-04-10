@@ -34,6 +34,13 @@ const projects: Project[] = [
     link: "https://fitness.dennisheyer.dev",
     highlight: "Aktives Projekt",
   },
+  {
+    title: "Portfolio Website",
+    description: "Moderne Portfolio-Website mit Next.js 16, optimiert für Performance und SEO. Animierte UI-Elemente mit Framer Motion und automatisierte Quality Checks via GitHub Actions.",
+    techStack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion", "GitHub Actions"],
+    link: "https://github.com/Radok527/dennisheyer-portfolio",
+    highlight: "Open Source",
+  },
 ];
 
 const containerVariants = {
@@ -58,12 +65,13 @@ const itemVariants: Variants = {
 
 export default function ProjectsSection() {
   const featuredProject = projects.find((p) => p.variant === "featured");
+  const standardProjects = projects.filter((p) => p.variant !== "featured");
 
   return (
     <SectionWrapper
       id="projects"
       title="Projekte"
-      subtitle="Ein Projekt das für sich spricht"
+      subtitle="Was ich so gebaut habe"
       className="bg-black"
     >
       <motion.div
@@ -78,6 +86,17 @@ export default function ProjectsSection() {
           <motion.div variants={itemVariants} className="w-full">
             <ProjectCard {...featuredProject} />
           </motion.div>
+        )}
+
+        {/* Standard projects - smaller cards in a grid */}
+        {standardProjects.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {standardProjects.map((project) => (
+              <motion.div key={project.title} variants={itemVariants}>
+                <ProjectCard {...project} />
+              </motion.div>
+            ))}
+          </div>
         )}
       </motion.div>
     </SectionWrapper>
