@@ -34,22 +34,6 @@ const projects: Project[] = [
     link: "https://fitness.dennisheyer.dev",
     highlight: "Aktives Projekt",
   },
-  {
-    title: "Vendor Management System",
-    variant: "standard",
-    description:
-      "Modulares Microservices-System zur Ablösung monolithischer Legacy-Architekturen.",
-    techStack: ["Java", "Spring Boot", "Kubernetes", "PostgreSQL"],
-    link: "#",
-  },
-  {
-    title: "Streaming-Plattform (tshakka)",
-    variant: "standard",
-    description:
-      "Hochverfügbare Streaming-Plattform für ~500 gleichzeitige Nutzer.",
-    techStack: ["AWS", "Java", "Spring Boot"],
-    link: "#",
-  },
 ];
 
 const containerVariants = {
@@ -74,13 +58,12 @@ const itemVariants: Variants = {
 
 export default function ProjectsSection() {
   const featuredProject = projects.find((p) => p.variant === "featured");
-  const standardProjects = projects.filter((p) => p.variant === "standard");
 
   return (
     <SectionWrapper
       id="projects"
       title="Projekte"
-      subtitle="Was ich gebaut habe"
+      subtitle="Ein Projekt das für sich spricht"
       className="bg-black"
     >
       <motion.div
@@ -96,18 +79,6 @@ export default function ProjectsSection() {
             <ProjectCard {...featuredProject} />
           </motion.div>
         )}
-
-        {/* Standard projects grid */}
-        <motion.div
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {standardProjects.map((project) => (
-            <motion.div key={project.title} variants={itemVariants}>
-              <ProjectCard {...project} />
-            </motion.div>
-          ))}
-        </motion.div>
       </motion.div>
     </SectionWrapper>
   );

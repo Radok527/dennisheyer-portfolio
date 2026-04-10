@@ -27,16 +27,6 @@ export default function AboutSection() {
               Backend Engineer mit Fokus auf skalierbare Systeme. Ich baue und betreibe produktionsreife Anwendungen — von der Architektur bis zum Deployment. Analytisch, lösungsorientiert, mit Hands-on-Mentalität.
             </p>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 gap-6 mt-12 pt-8 border-t border-zinc-800">
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-green-400">
-                4+
-              </p>
-              <p className="text-gray-500 text-sm mt-1">Jahre Erfahrung</p>
-            </div>
-          </div>
         </div>
       </motion.div>
     </SectionWrapper>

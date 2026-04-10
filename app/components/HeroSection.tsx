@@ -116,7 +116,7 @@ export default function HeroSection() {
                 <div className="p-6 font-mono text-sm space-y-3">
                   <p className="text-gray-500">$ wer bin ich</p>
                   <p className="text-green-400">Dennis Heyer</p>
-                  <p className="text-gray-500">$ kat skills.txt</p>
+                  <p className="text-gray-500">$ cat skills.txt</p>
                   <div className="space-y-1">
                     <p className="text-white">
                       <span className="text-green-400">→</span> Java / Spring
