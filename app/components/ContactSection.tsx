@@ -5,7 +5,7 @@ import SectionWrapper from "./SectionWrapper";
 
 const contactLinks = [
   {
-    title: "Email",
+    title: "E-Mail",
     value: "REDACTED",
     href: "mailto:REDACTED",
     icon: (
@@ -70,8 +70,8 @@ export default function ContactSection() {
   return (
     <SectionWrapper
       id="contact"
-      title="Get in Touch"
-      subtitle="Let&apos;s connect"
+      title="Kontakt"
+      subtitle="So erreichst du mich"
       className="bg-black"
     >
       <motion.div
@@ -117,12 +117,12 @@ export default function ContactSection() {
         className="text-center mt-16"
       >
         <p className="text-gray-500 text-lg">
-          Looking for a developer?{" "}
+          Auf der Suche nach einem Entwickler?{" "}
           <a
             href="mailto:REDACTED"
             className="text-green-400 hover:text-green-300 transition-colors duration-200 underline underline-offset-4"
           >
-            Let&apos;s talk
+            Schreib mir
           </a>
         </p>
       </motion.div>

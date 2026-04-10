@@ -45,7 +45,7 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-green-400 font-medium text-lg"
             >
-              Hello, I&apos;m
+              Hallo, ich bin
             </motion.p>
 
             <motion.h1
@@ -62,7 +62,14 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-lg"
             >
-              Java Backend Engineer mit Schwerpunkt Spring Boot, React, und KI-Integration. 4+ Jahre Erfahrung in Enterprise-Umgebungen.
+              Backend Engineer
+            </motion.p>
+
+            <motion.p
+              variants={itemVariants}
+              className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-lg"
+            >
+              Ich entwickle skalierbare Backend-Systeme, APIs und betreibe produktionsreife Anwendungen.
             </motion.p>
 
             <motion.p
@@ -77,10 +84,10 @@ export default function HeroSection() {
               className="flex flex-wrap gap-4 pt-4"
             >
               <Button href="#projects" variant="primary" size="lg">
-                View Projects
+                Projekte
               </Button>
               <Button href="#contact" variant="secondary" size="lg">
-                Contact
+                Kontakt
               </Button>
             </motion.div>
           </motion.div>
@@ -107,9 +114,9 @@ export default function HeroSection() {
 
                 {/* Terminal content */}
                 <div className="p-6 font-mono text-sm space-y-3">
-                  <p className="text-gray-500">$ whoami</p>
+                  <p className="text-gray-500">$ wer bin ich</p>
                   <p className="text-green-400">Dennis Heyer</p>
-                  <p className="text-gray-500">$ cat skills.txt</p>
+                  <p className="text-gray-500">$ kat skills.txt</p>
                   <div className="space-y-1">
                     <p className="text-white">
                       <span className="text-green-400">→</span> Java / Spring
@@ -119,13 +126,13 @@ export default function HeroSection() {
                       <span className="text-green-400">→</span> React / TypeScript (Frontend)
                     </p>
                     <p className="text-white">
-                      <span className="text-green-400">→</span> Python / FastAPI (AI)
+                      <span className="text-green-400">→</span> Python / FastAPI (KI)
                     </p>
                     <p className="text-white">
                       <span className="text-green-400">→</span> Docker / Kubernetes (DevOps)
                     </p>
                     <p className="text-white">
-                      <span className="text-green-400">→</span> Ollama / Embeddings (AI)
+                      <span className="text-green-400">→</span> Ollama / Embeddings (KI)
                     </p>
                   </div>
                   <p className="text-gray-500">$ _</p>

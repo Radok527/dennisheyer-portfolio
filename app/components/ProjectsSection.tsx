@@ -4,16 +4,52 @@ import { motion, type Variants } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import ProjectCard from "./ProjectCard";
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  impact?: string;
+  bullets?: string[];
+  techStack: string[];
+  imageUrl?: string;
+  link: string;
+  highlight?: string;
+  variant?: "featured" | "standard";
+}
+
+const projects: Project[] = [
   {
     title: "Fitness Coaching Engine",
-    description:
-      "Full-Stack PWA für Kraftathleten. KI-gestützte Übungs-Normalisierung (Hybrid: Embeddings + LLM), deterministische Analytics (1RM, Volume, Plateau-Erkennung), Offline-First mit Workbox. JWT/Argon2 Auth, PostgreSQL mit Flyway, Docker Compose, GitHub Actions CI/CD.",
-    techStack: ["React 19", "TypeScript", "FastAPI", "PostgreSQL", "Ollama", "Docker", "Workbox", "TanStack Query"],
-    imageUrl: "/assets/fitness.png",
+    variant: "featured",
+    description: "",
+    impact:
+      "KI-gestütztes Trainingssystem mit semantischer Übungsanalyse — von Rohdaten bis zu aussagekräftigen Metriken.",
+    bullets: [
+      "Architektur: Schichtenarchitektur (API → Services → Analytics → Infrastructure) — bewusst ohne ORM",
+      "Analytics: Deterministische Metriken (1RM, Volume, Plateau-Erkennung) mit NumPy",
+      "Hybrid AI: Embedding-basiertes Ähnlichkeitsmatching + LLM-Fallback mit Confidence Scoring",
+      "Fullstack: React 19 + FastAPI + PostgreSQL + Docker Compose + Workbox PWA",
+      "Betrieb: Self-hosted Ollama für Embeddings, CI/CD mit GitHub Actions",
+    ],
+    techStack: ["React 19", "TypeScript", "FastAPI", "PostgreSQL", "Ollama", "Docker", "Workbox"],
     link: "https://fitness.dennisheyer.dev",
-    highlight: "Active Project"
-  }
+    highlight: "Aktives Projekt",
+  },
+  {
+    title: "Vendor Management System",
+    variant: "standard",
+    description:
+      "Modulares Microservices-System zur Ablösung monolithischer Legacy-Architekturen.",
+    techStack: ["Java", "Spring Boot", "Kubernetes", "PostgreSQL"],
+    link: "#",
+  },
+  {
+    title: "Streaming-Plattform (tshakka)",
+    variant: "standard",
+    description:
+      "Hochverfügbare Streaming-Plattform für ~500 gleichzeitige Nutzer.",
+    techStack: ["AWS", "Java", "Spring Boot"],
+    link: "#",
+  },
 ];
 
 const containerVariants = {
@@ -37,11 +73,14 @@ const itemVariants: Variants = {
 };
 
 export default function ProjectsSection() {
+  const featuredProject = projects.find((p) => p.variant === "featured");
+  const standardProjects = projects.filter((p) => p.variant === "standard");
+
   return (
     <SectionWrapper
       id="projects"
-      title="Projects"
-      subtitle="Things I&apos;ve built"
+      title="Projekte"
+      subtitle="Was ich gebaut habe"
       className="bg-black"
     >
       <motion.div
@@ -49,13 +88,26 @@ export default function ProjectsSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+        className="flex flex-col gap-6 lg:gap-8"
       >
-        {projects.map((project) => (
-          <motion.div key={project.title} variants={itemVariants}>
-            <ProjectCard {...project} />
+        {/* Featured project - larger, case study style */}
+        {featuredProject && (
+          <motion.div variants={itemVariants} className="w-full">
+            <ProjectCard {...featuredProject} />
           </motion.div>
-        ))}
+        )}
+
+        {/* Standard projects grid */}
+        <motion.div
+          variants={containerVariants}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {standardProjects.map((project) => (
+            <motion.div key={project.title} variants={itemVariants}>
+              <ProjectCard {...project} />
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
     </SectionWrapper>
   );

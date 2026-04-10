@@ -1,0 +1,364 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - link "Dennis Heyer" [ref=e6] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e7]:
+          - link "Projekte" [ref=e8] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Erfahrung" [ref=e9] [cursor=pointer]:
+            - /url: "#experience"
+          - link "KI-Erfahrung" [ref=e10] [cursor=pointer]:
+            - /url: "#ai-experience"
+          - link "Technologien" [ref=e11] [cursor=pointer]:
+            - /url: "#tech"
+          - link "Über mich" [ref=e12] [cursor=pointer]:
+            - /url: "#about"
+          - link "Kontakt" [ref=e13] [cursor=pointer]:
+            - /url: "#contact"
+    - main [ref=e14]:
+      - generic [ref=e21]:
+        - paragraph [ref=e22]: Hallo, ich bin
+        - heading "Dennis Heyer" [level=1] [ref=e23]
+        - paragraph [ref=e24]: Backend Engineer
+        - paragraph [ref=e25]: Ich entwickle skalierbare Backend-Systeme, APIs und betreibe produktionsreife Anwendungen.
+        - paragraph [ref=e26]: Hannover, Deutschland
+        - generic [ref=e27]:
+          - link "Projekte" [ref=e28] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Kontakt" [ref=e29] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - heading "Projekte" [level=2] [ref=e36]
+          - paragraph [ref=e37]: Was ich gebaut habe
+        - generic [ref=e39]:
+          - 'link "Aktives Projekt Fitness Coaching Engine KI-gestütztes Trainingssystem mit semantischer Übungsanalyse — von Rohdaten bis zu aussagekräftigen Metriken. Architektur: Schichtenarchitektur (API → Services → Analytics → Infrastructure) — bewusst ohne ORM Analytics: Deterministische Metriken (1RM, Volume, Plateau-Erkennung) mit NumPy Hybrid AI: Embedding-basiertes Ähnlichkeitsmatching + LLM-Fallback mit Confidence Scoring Fullstack: React 19 + FastAPI + PostgreSQL + Docker Compose + Workbox PWA Betrieb: Self-hosted Ollama für Embeddings, CI/CD mit GitHub Actions React 19 TypeScript FastAPI PostgreSQL Ollama Docker Workbox" [ref=e41] [cursor=pointer]':
+            - /url: https://fitness.dennisheyer.dev
+            - generic [ref=e58]: Aktives Projekt
+            - generic [ref=e59]:
+              - heading "Fitness Coaching Engine" [level=3] [ref=e60]
+              - paragraph [ref=e61]: KI-gestütztes Trainingssystem mit semantischer Übungsanalyse — von Rohdaten bis zu aussagekräftigen Metriken.
+              - list [ref=e62]:
+                - listitem [ref=e63]: "Architektur: Schichtenarchitektur (API → Services → Analytics → Infrastructure) — bewusst ohne ORM"
+                - listitem [ref=e65]: "Analytics: Deterministische Metriken (1RM, Volume, Plateau-Erkennung) mit NumPy"
+                - listitem [ref=e67]: "Hybrid AI: Embedding-basiertes Ähnlichkeitsmatching + LLM-Fallback mit Confidence Scoring"
+                - listitem [ref=e69]: "Fullstack: React 19 + FastAPI + PostgreSQL + Docker Compose + Workbox PWA"
+                - listitem [ref=e71]: "Betrieb: Self-hosted Ollama für Embeddings, CI/CD mit GitHub Actions"
+              - generic [ref=e73]:
+                - generic [ref=e74]: React 19
+                - generic [ref=e75]: TypeScript
+                - generic [ref=e76]: FastAPI
+                - generic [ref=e77]: PostgreSQL
+                - generic [ref=e78]: Ollama
+                - generic [ref=e79]: Docker
+                - generic [ref=e80]: Workbox
+          - generic [ref=e81]:
+            - link "Vendor Management System Modulares Microservices-System zur Ablösung monolithischer Legacy-Architekturen. Java Spring Boot Kubernetes PostgreSQL" [ref=e83] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e97]:
+                - heading "Vendor Management System" [level=3] [ref=e98]
+                - paragraph [ref=e99]: Modulares Microservices-System zur Ablösung monolithischer Legacy-Architekturen.
+                - generic [ref=e100]:
+                  - generic [ref=e101]: Java
+                  - generic [ref=e102]: Spring Boot
+                  - generic [ref=e103]: Kubernetes
+                  - generic [ref=e104]: PostgreSQL
+            - link "Streaming-Plattform (tshakka) Hochverfügbare Streaming-Plattform für ~500 gleichzeitige Nutzer. AWS Java Spring Boot" [ref=e106] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e120]:
+                - heading "Streaming-Plattform (tshakka)" [level=3] [ref=e121]
+                - paragraph [ref=e122]: Hochverfügbare Streaming-Plattform für ~500 gleichzeitige Nutzer.
+                - generic [ref=e123]:
+                  - generic [ref=e124]: AWS
+                  - generic [ref=e125]: Java
+                  - generic [ref=e126]: Spring Boot
+      - generic [ref=e128]:
+        - generic [ref=e129]:
+          - heading "Experience" [level=2] [ref=e130]
+          - paragraph [ref=e131]: Where I've worked
+        - generic [ref=e135]:
+          - generic [ref=e138]:
+            - generic [ref=e140]: 10/2025 – 02/2026
+            - generic [ref=e141]:
+              - generic [ref=e142]:
+                - generic [ref=e143]:
+                  - heading "Software Engineer" [level=3] [ref=e144]
+                  - paragraph [ref=e145]: adesso SE / BITMARCK
+                - generic [ref=e146]: 10/2025 – 02/2026
+              - paragraph [ref=e147]: Angebotsbestandsführungssystem (ABfs)
+              - list [ref=e148]:
+                - listitem [ref=e149]:
+                  - generic [ref=e150]: ▹
+                  - text: Webbasiertes Angebotsbestandsführungssystem für Enterprise-Projektsteuerung
+                - listitem [ref=e151]:
+                  - generic [ref=e152]: ▹
+                  - text: Fullstack-Entwicklung mit Spring Boot, JPA, Hibernate
+                - listitem [ref=e153]:
+                  - generic [ref=e154]: ▹
+                  - text: Aufbau der Testumgebung inkl. Integrationstests
+                - listitem [ref=e155]:
+                  - generic [ref=e156]: ▹
+                  - text: Abstimmung mit Product Ownern bei fachlichen Anforderungen
+          - generic [ref=e159]:
+            - generic [ref=e161]: 08/2021 – 05/2025
+            - generic [ref=e162]:
+              - generic [ref=e163]:
+                - generic [ref=e164]:
+                  - heading "Software Engineer" [level=3] [ref=e165]
+                  - paragraph [ref=e166]: fruuts GmbH
+                - generic [ref=e167]: 08/2021 – 05/2025
+              - paragraph [ref=e168]: Vendor Management System (VMS)
+              - list [ref=e169]:
+                - listitem [ref=e170]:
+                  - generic [ref=e171]: ▹
+                  - text: Modulares VMS zur Ablösung monolithischer Legacy-Systeme via Microservices
+                - listitem [ref=e172]:
+                  - generic [ref=e173]: ▹
+                  - text: RESTful APIs für Backend-Service-Kommunikation
+                - listitem [ref=e174]:
+                  - generic [ref=e175]: ▹
+                  - text: Migration zu Docker, Kubernetes, Helm
+                - listitem [ref=e176]:
+                  - generic [ref=e177]: ▹
+                  - text: CI/CD mit Jenkins, automatisierte Tests (Unit, Integration, E2E)
+                - listitem [ref=e178]:
+                  - generic [ref=e179]: ▹
+                  - text: Monitoring mit Prometheus, Grafana
+          - generic [ref=e182]:
+            - generic [ref=e184]: 08/2021 – 05/2025
+            - generic [ref=e185]:
+              - generic [ref=e186]:
+                - generic [ref=e187]:
+                  - heading "Software Engineer" [level=3] [ref=e188]
+                  - paragraph [ref=e189]: fruuts GmbH
+                - generic [ref=e190]: 08/2021 – 05/2025
+              - paragraph [ref=e191]: Streaming-Plattform (tshakka)
+              - list [ref=e192]:
+                - listitem [ref=e193]:
+                  - generic [ref=e194]: ▹
+                  - text: Hochverfügbare Streaming-Plattform auf AWS-Basis
+                - listitem [ref=e195]:
+                  - generic [ref=e196]: ▹
+                  - text: Java/Spring Boot Backend für Echtzeit-Medienverarbeitung
+                - listitem [ref=e197]:
+                  - generic [ref=e198]: ▹
+                  - text: Performance-Optimierung für ~500 gleichzeitige Nutzer
+                - listitem [ref=e199]:
+                  - generic [ref=e200]: ▹
+                  - text: Integration externer Dienste (z.B. Zahlungsabwicklung)
+          - generic [ref=e203]:
+            - generic [ref=e205]: 08/2021 – 09/2022
+            - generic [ref=e206]:
+              - generic [ref=e207]:
+                - generic [ref=e208]:
+                  - heading "Software Engineer / Tester" [level=3] [ref=e209]
+                  - paragraph [ref=e210]: umlaut energy GmbH
+                - generic [ref=e211]: 08/2021 – 09/2022
+              - paragraph [ref=e212]: DA/RE Plattform (Redispatch 2.0)
+              - list [ref=e213]:
+                - listitem [ref=e214]:
+                  - generic [ref=e215]: ▹
+                  - text: Cloudbasierte IT-Plattform für Netzstabilisierung im Energiesektor
+                - listitem [ref=e216]:
+                  - generic [ref=e217]: ▹
+                  - text: XML-basierte Schnittstellen für Redispatch 2.0-Prozesse
+                - listitem [ref=e218]:
+                  - generic [ref=e219]: ▹
+                  - text: Automatisierte Tests (Schnittstellen-, BlackBox-, Integrationstests)
+                - listitem [ref=e220]:
+                  - generic [ref=e221]: ▹
+                  - text: Datenkonsistenz-Validierung für 46+ Nutzer deutschlandweit
+          - generic [ref=e224]:
+            - generic [ref=e226]: 01/2019 – 01/2021
+            - generic [ref=e227]:
+              - generic [ref=e228]:
+                - generic [ref=e229]:
+                  - heading "Software Engineer" [level=3] [ref=e230]
+                  - paragraph [ref=e231]: Since Idea Games
+                - generic [ref=e232]: 01/2019 – 01/2021
+              - paragraph [ref=e233]: Mobile Game "Cyber Hero"
+              - list [ref=e234]:
+                - listitem [ref=e235]:
+                  - generic [ref=e236]: ▹
+                  - text: Co-Entwicklung mit Fokus auf Performance und ressourcenschonende Implementierung
+                - listitem [ref=e237]:
+                  - generic [ref=e238]: ▹
+                  - text: Entwicklung und Optimierung der zentralen Spiellogik
+                - listitem [ref=e239]:
+                  - generic [ref=e240]: ▹
+                  - text: Benchmark-Datenbank für Laufzeit- und Performance-Metriken
+                - listitem [ref=e241]:
+                  - generic [ref=e242]: ▹
+                  - text: RAM-Optimierung für stabile Spielerfahrung
+      - generic [ref=e244]:
+        - generic [ref=e245]:
+          - heading "KI-Erfahrung" [level=2] [ref=e246]
+          - paragraph [ref=e247]: Praktische KI-Kenntnisse aus eigenen Projekten
+        - generic [ref=e248]:
+          - paragraph [ref=e249]: Erfahrung mit LLMs, Embeddings und KI-gestützter Automatisierung — von der Integration bis zum produktiven Betrieb.
+          - generic [ref=e250]:
+            - generic [ref=e251]:
+              - heading "Multi-Agent System" [level=3] [ref=e252]: Multi-Agent System
+              - paragraph [ref=e254]: Architect-Agent für strategische Planung, CoderAgent für Implementierung, TestEngineer, CodeReviewer und BuildAgent. Klare Rollentrennung mit Genehmigungs-Gates.
+              - generic [ref=e255]:
+                - generic [ref=e256]: Orchestrierung
+                - generic [ref=e257]: Sub-Agent-Verwaltung
+                - generic [ref=e258]: MCP-Tool-Integration
+                - generic [ref=e259]: BatchExecutor
+            - generic [ref=e260]:
+              - heading "Models & APIs" [level=3] [ref=e261]: Models & APIs
+              - paragraph [ref=e263]: Erfahrung mit GPT-4o, Claude, MiniMax (Orbit), OpenAI Codex, Ollama (self-hosted) und embeddinggemma für verschiedene Use-Cases.
+              - generic [ref=e264]:
+                - generic [ref=e265]: GPT-4o
+                - generic [ref=e266]: Claude
+                - generic [ref=e267]: MiniMax Orbit
+                - generic [ref=e268]: OpenAI Codex
+                - generic [ref=e269]: Ollama
+                - generic [ref=e270]: Embeddinggemma
+            - generic [ref=e271]:
+              - heading "Prompt Engineering" [level=3] [ref=e272]: Prompt Engineering
+              - paragraph [ref=e274]: System-Prompts mit Rollen und Genehmigungs-Gates. Chain-of-Thought für strukturierte Reasoning-Patterns. Wiederverwendbare Prompt-Templates.
+              - generic [ref=e275]:
+                - generic [ref=e276]: System-Prompts
+                - generic [ref=e277]: Chain-of-Thought
+                - generic [ref=e278]: Prompt-Templating
+                - generic [ref=e279]: Few-shot Prompting
+            - generic [ref=e280]:
+              - heading "RAG & Suche" [level=3] [ref=e281]: RAG & Suche
+              - paragraph [ref=e283]: Hybrid-Suche mit Embedding Similarity und Cosine-Similarity für automatische Kontext-Zuordnung. Vorberechnete Embeddings mit Caching.
+              - generic [ref=e284]:
+                - generic [ref=e285]: Hybride Suche
+                - generic [ref=e286]: Embedding Similarity
+                - generic [ref=e287]: Cosine-Similarity
+                - generic [ref=e288]: Vektor-Datenbank
+                - generic [ref=e289]: Embedding-Caching
+            - generic [ref=e290]:
+              - heading "Agentic Patterns" [level=3] [ref=e291]: Agentic Patterns
+              - paragraph [ref=e293]: Multi-Agent-Workflows mit definierter Reihenfolge. Agent-Turn-Pattern für Cron-getriggerte Automatisierung. Timeout-Handling und Graceful Degradation.
+              - generic [ref=e294]:
+                - generic [ref=e295]: Multi-Agent Workflows
+                - generic [ref=e296]: Agent-Turn Pattern
+                - generic [ref=e297]: Tool-Use
+                - generic [ref=e298]: Timeout-Handling
+            - generic [ref=e299]:
+              - heading "Produktive KI" [level=3] [ref=e300]: Produktive KI
+              - paragraph [ref=e302]: CI/CD-Integration mit KI-Validierung. Modell-Evaluation und Benchmarking zwischen OpenAI, Claude, MiniMax und Ollama.
+              - generic [ref=e303]:
+                - generic [ref=e304]: CI/CD-Integration
+                - generic [ref=e305]: Modell-Evaluation
+                - generic [ref=e306]: Benchmarking
+                - generic [ref=e307]: JSON-Output-Parsing
+                - generic [ref=e308]: Retry-Logik
+            - generic [ref=e309]:
+              - heading "Eigenes KI-System" [level=3] [ref=e310]: Eigenes KI-System
+              - paragraph [ref=e312]: Täglicher KI-gestützter Job-Scan, Deal-Alerts und Tankpreis-Check via Cron-Jobs. MCP-Server für externe Tool-Integration. Telegram-Bot für Push-Benachrichtigungen.
+              - generic [ref=e313]:
+                - generic [ref=e314]: Tägliche Automatisierung
+                - generic [ref=e315]: Telegram-Bot
+                - generic [ref=e316]: Tool-Building
+                - generic [ref=e317]: Cron-Job-Orchestrierung
+      - generic [ref=e319]:
+        - generic [ref=e320]:
+          - heading "Infrastruktur & Deployment" [level=2] [ref=e321]
+          - paragraph [ref=e322]: Eigenverantwortlicher Betrieb meiner Anwendungen
+        - generic [ref=e323]:
+          - paragraph [ref=e326]: Ich betreibe meine Anwendungen eigenverantwortlich — von der Entwicklung bis zum Produktionsbetrieb.
+          - generic [ref=e327]:
+            - generic [ref=e329]:
+              - generic [ref=e330]: 🖥️
+              - generic [ref=e331]:
+                - heading "Hetzner VPS" [level=3] [ref=e332]
+                - paragraph [ref=e333]: Self-hosted Server für Produktions-Workloads
+            - generic [ref=e335]:
+              - generic [ref=e336]: ☁️
+              - generic [ref=e337]:
+                - heading "Cloudflare" [level=3] [ref=e338]
+                - paragraph [ref=e339]: DNS, Security und CDN
+            - generic [ref=e341]:
+              - generic [ref=e342]: 📦
+              - generic [ref=e343]:
+                - heading "Docker / Docker Compose" [level=3] [ref=e344]
+                - paragraph [ref=e345]: Containerisierung und Orchestrierung
+            - generic [ref=e347]:
+              - generic [ref=e348]: 📧
+              - generic [ref=e349]:
+                - heading "Resend" [level=3] [ref=e350]
+                - paragraph [ref=e351]: E-Mail-Infrastruktur für Transaktions-E-Mails
+            - generic [ref=e353]:
+              - generic [ref=e354]: 🔄
+              - generic [ref=e355]:
+                - heading "GitHub Actions" [level=3] [ref=e356]
+                - paragraph [ref=e357]: CI/CD Pipeline für automatisierte Deployments
+      - generic [ref=e359]:
+        - generic [ref=e360]:
+          - heading "Tech Stack" [level=2] [ref=e361]
+          - paragraph [ref=e362]: Technologien mit Produktionserfahrung
+        - generic [ref=e364]:
+          - generic [ref=e365]:
+            - paragraph [ref=e366]: Backend
+            - generic [ref=e367]:
+              - generic [ref=e368]: Java 11–21
+              - generic [ref=e369]: Spring Boot
+              - generic [ref=e370]: Python 3.11+
+              - generic [ref=e371]: FastAPI
+              - generic [ref=e372]: PostgreSQL
+          - generic [ref=e373]:
+            - paragraph [ref=e374]: Frontend
+            - generic [ref=e375]:
+              - generic [ref=e376]: React 18
+              - generic [ref=e377]: TypeScript 5
+              - generic [ref=e378]: TailwindCSS v4
+              - generic [ref=e379]: Workbox (PWA)
+          - generic [ref=e380]:
+            - paragraph [ref=e381]: DevOps / Infrastruktur
+            - generic [ref=e382]:
+              - generic [ref=e383]: Docker
+              - generic [ref=e384]: Docker Compose
+              - generic [ref=e385]: Nginx
+              - generic [ref=e386]: Flyway
+          - generic [ref=e387]:
+            - paragraph [ref=e388]: AI
+            - generic [ref=e389]:
+              - generic [ref=e390]: Ollama
+              - generic [ref=e391]: Embeddings
+              - generic [ref=e392]: Semantic Search
+      - generic [ref=e394]:
+        - generic [ref=e395]:
+          - heading "Über mich" [level=2] [ref=e396]
+          - paragraph [ref=e397]: Kurz und knapp
+        - generic [ref=e401]:
+          - paragraph [ref=e403]: Backend Engineer mit Fokus auf skalierbare Systeme. Ich baue und betreibe produktionsreife Anwendungen — von der Architektur bis zum Deployment. Analytisch, lösungsorientiert, mit Hands-on-Mentalität.
+          - generic [ref=e405]:
+            - paragraph [ref=e406]: 4+
+            - paragraph [ref=e407]: Jahre Erfahrung
+      - generic [ref=e409]:
+        - generic [ref=e410]:
+          - heading "Kontakt" [level=2] [ref=e411]
+          - paragraph [ref=e412]: So erreichst du mich
+        - generic [ref=e413]:
+          - generic [ref=e414]:
+            - link "E-Mail REDACTED" [ref=e415] [cursor=pointer]:
+              - /url: mailto:REDACTED
+              - img [ref=e417]
+              - heading "E-Mail" [level=3] [ref=e419]
+              - paragraph [ref=e420]: REDACTED
+            - link "GitHub github.com/dennisheyer" [ref=e421] [cursor=pointer]:
+              - /url: https://github.com/dennisheyer
+              - img [ref=e423]
+              - heading "GitHub" [level=3] [ref=e425]
+              - paragraph [ref=e426]: github.com/dennisheyer
+            - link "LinkedIn linkedin.com/in/dennis-heyer-4a92a6332" [ref=e427] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/dennis-heyer-4a92a6332
+              - img [ref=e429]
+              - heading "LinkedIn" [level=3] [ref=e431]
+              - paragraph [ref=e432]: linkedin.com/in/dennis-heyer-4a92a6332
+          - paragraph [ref=e434]:
+            - text: Auf der Suche nach einem Entwickler?
+            - link "Schreib mir" [ref=e435] [cursor=pointer]:
+              - /url: mailto:REDACTED
+    - contentinfo [ref=e436]:
+      - paragraph [ref=e437]: © 2026 Dennis Heyer. Alle Rechte vorbehalten.
+  - button "Open Next.js Dev Tools" [ref=e443] [cursor=pointer]:
+    - img [ref=e444]

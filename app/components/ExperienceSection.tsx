@@ -80,8 +80,8 @@ export default function ExperienceSection() {
   return (
     <SectionWrapper
       id="experience"
-      title="Experience"
-      subtitle="Where I&apos;ve worked"
+      title="Erfahrung"
+      subtitle="Wo ich gearbeitet habe"
       className="bg-zinc-950"
     >
       <div className="relative">

@@ -7,8 +7,8 @@ export default function AboutSection() {
   return (
     <SectionWrapper
       id="about"
-      title="About"
-      subtitle="A bit about me"
+      title="Über mich"
+      subtitle="Kurz und knapp"
       className="bg-zinc-950 relative overflow-hidden"
     >
       {/* Decorative gradient blob */}
@@ -22,21 +22,9 @@ export default function AboutSection() {
         className="relative z-10 max-w-3xl mx-auto"
       >
         <div className="bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 md:p-12">
-          <div className="space-y-5 text-lg text-gray-300 leading-relaxed">
-            <p>
-              Java Backend Engineer mit 4+ Jahren Erfahrung in Enterprise-Umgebungen.
-              Spezialisiert auf <span className="text-green-400 font-medium">Spring Boot</span> Backends,
-              <span className="text-green-400 font-medium"> React/TypeScript</span> Frontends
-              und <span className="text-green-400 font-medium">AI-Integration</span> mit
-              Embeddings, Semantic Search und LLMs.
-            </p>
-            <p>
-              Fundierte Kenntnisse im gesamten Software-Lifecycle: Konzeption,
-              Implementierung, Deployment und Monitoring. Analytisch, strukturiert
-              und lösungsorientiert.
-            </p>
-            <p>
-              Standort: <span className="text-green-400 font-medium">Hannover, Deutschland</span>
+          <div className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-center max-w-2xl">
+              Backend Engineer mit Fokus auf skalierbare Systeme. Ich baue und betreibe produktionsreife Anwendungen — von der Architektur bis zum Deployment. Analytisch, lösungsorientiert, mit Hands-on-Mentalität.
             </p>
           </div>
 
@@ -46,7 +34,7 @@ export default function AboutSection() {
               <p className="text-3xl md:text-4xl font-bold text-green-400">
                 4+
               </p>
-              <p className="text-gray-500 text-sm mt-1">Years Experience</p>
+              <p className="text-gray-500 text-sm mt-1">Jahre Erfahrung</p>
             </div>
           </div>
         </div>

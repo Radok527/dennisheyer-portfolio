@@ -4,6 +4,7 @@ import {
   ProjectsSection,
   ExperienceSection,
   AIExperienceSection,
+  InfrastructureSection,
   TechSection,
   AboutSection,
   ContactSection,
@@ -18,12 +19,13 @@ export default function Home() {
         <ProjectsSection />
         <ExperienceSection />
         <AIExperienceSection />
+        <InfrastructureSection />
         <TechSection />
         <AboutSection />
         <ContactSection />
       </main>
       <footer className="py-8 border-t border-zinc-800 text-center text-gray-500">
-        <p>&copy; {new Date().getFullYear()} Dennis Heyer. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Dennis Heyer. Alle Rechte vorbehalten.</p>
       </footer>
     </div>
   );

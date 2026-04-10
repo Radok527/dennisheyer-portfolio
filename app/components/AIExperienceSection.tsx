@@ -14,13 +14,13 @@ const aiExperience: AIExperience[] = [
   {
     title: "Multi-Agent System",
     description: "Architect-Agent für strategische Planung, CoderAgent für Implementierung, TestEngineer, CodeReviewer und BuildAgent. Klare Rollentrennung mit Genehmigungs-Gates.",
-    tags: ["Orchestration", "Sub-Agent Management", "MCP-Tool-Integration", "BatchExecutor"],
+    tags: ["Orchestrierung", "Sub-Agent-Verwaltung", "MCP-Tool-Integration", "BatchExecutor"],
     tagColor: "blue"
   },
   {
     title: "Models & APIs",
     description: "Erfahrung mit GPT-4o, Claude, MiniMax (Orbit), OpenAI Codex, Ollama (self-hosted) und embeddinggemma für verschiedene Use-Cases.",
-    tags: ["GPT-4o", "Claude", "MiniMax Orbit", "OpenAI Codex", "Ollama", "embeddinggemma"],
+    tags: ["GPT-4o", "Claude", "MiniMax Orbit", "OpenAI Codex", "Ollama", "Embeddinggemma"],
     tagColor: "blue"
   },
   {
@@ -30,9 +30,9 @@ const aiExperience: AIExperience[] = [
     tagColor: "green"
   },
   {
-    title: "RAG & Search",
+    title: "RAG & Suche",
     description: "Hybrid-Suche mit Embedding Similarity und Cosine-Similarity für automatische Kontext-Zuordnung. Vorberechnete Embeddings mit Caching.",
-    tags: ["Hybrid Search", "Embedding Similarity", "Cosine-Similarity", "Vector-DB", "Embedding-Caching"],
+    tags: ["Hybride Suche", "Embedding Similarity", "Cosine-Similarity", "Vektor-Datenbank", "Embedding-Caching"],
     tagColor: "green"
   },
   {
@@ -42,15 +42,15 @@ const aiExperience: AIExperience[] = [
     tagColor: "purple"
   },
   {
-    title: "Production AI",
-    description: "CI/CD-Integration mit AI-Validierung. Modell-Evaluation und Benchmarking zwischen OpenAI, Claude, MiniMax und Ollama.",
-    tags: ["CI/CD Integration", "Model Evaluation", "Benchmarking", "JSON-Output-Parsing", "Retry-Logik"],
+    title: "Produktive KI",
+    description: "CI/CD-Integration mit KI-Validierung. Modell-Evaluation und Benchmarking zwischen OpenAI, Claude, MiniMax und Ollama.",
+    tags: ["CI/CD-Integration", "Modell-Evaluation", "Benchmarking", "JSON-Output-Parsing", "Retry-Logik"],
     tagColor: "orange"
   },
   {
-    title: "Own AI System",
-    description: "Täglicher AI-gestützter Job-Scan, Deal-Alerts und Tankpreis-Check via Cron-Jobs. MCP-Server für externe Tool-Integration. Telegram-Bot für Push-Benachrichtigungen.",
-    tags: ["Daily Automation", "Telegram Bot", "Tool-Building", "Cron-Job Orchestration"],
+    title: "Eigenes KI-System",
+    description: "Täglicher KI-gestützter Job-Scan, Deal-Alerts und Tankpreis-Check via Cron-Jobs. MCP-Server für externe Tool-Integration. Telegram-Bot für Push-Benachrichtigungen.",
+    tags: ["Tägliche Automatisierung", "Telegram-Bot", "Tool-Building", "Cron-Job-Orchestrierung"],
     tagColor: "teal"
   }
 ];
@@ -87,6 +87,14 @@ const titleColors: Record<AIExperience["tagColor"], string> = {
   teal: "text-teal-400"
 };
 
+const bulletColors: Record<AIExperience["tagColor"], string> = {
+  blue: "bg-blue-500",
+  green: "bg-green-500",
+  purple: "bg-purple-500",
+  orange: "bg-orange-500",
+  teal: "bg-teal-500"
+};
+
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -100,10 +108,20 @@ export default function AIExperienceSection() {
   return (
     <SectionWrapper
       id="ai-experience"
-      title="AI Experience"
-      subtitle="Practical AI knowledge from projects and AI-assistant usage"
+      title="KI-Erfahrung"
+      subtitle="Praktische KI-Kenntnisse aus eigenen Projekten"
       className="bg-black"
     >
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="text-gray-400 text-center text-lg mb-12 max-w-3xl mx-auto leading-relaxed"
+      >
+        Erfahrung mit LLMs, Embeddings und KI-gestützter Automatisierung — von der Integration bis zum produktiven Betrieb.
+      </motion.p>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {aiExperience.map((experience) => (
           <motion.div
@@ -124,6 +142,7 @@ export default function AIExperienceSection() {
               variants={itemVariants}
               className={`text-lg font-semibold ${titleColors[experience.tagColor]} mb-3`}
             >
+              <span className={`inline-block w-2 h-2 rounded-full ${bulletColors[experience.tagColor]} mr-2 mb-0.5`} />
               {experience.title}
             </motion.h3>
             <motion.p

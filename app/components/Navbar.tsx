@@ -4,11 +4,12 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "#projects", label: "Projects" },
-  { href: "#ai-experience", label: "AI Experience" },
-  { href: "#tech", label: "Tech" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "#projects", label: "Projekte" },
+  { href: "#experience", label: "Erfahrung" },
+  { href: "#ai-experience", label: "KI-Erfahrung" },
+  { href: "#tech", label: "Technologien" },
+  { href: "#about", label: "Über mich" },
+  { href: "#contact", label: "Kontakt" },
 ];
 
 export default function Navbar() {
