@@ -1,29 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 
-const contactLinks = [
-  {
-    title: "E-Mail",
-    value: "REDACTED",
-    href: "mailto:REDACTED",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-        />
-      </svg>
-    ),
-  },
+const socialLinks = [
   {
     title: "GitHub",
     value: "github.com/Radok527",
@@ -46,17 +27,6 @@ const contactLinks = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.2,
-      staggerChildren: 0.15,
-    },
-  },
-};
-
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -67,6 +37,26 @@ const itemVariants: Variants = {
 };
 
 export default function ContactSection() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("success");
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <SectionWrapper
       id="contact"
@@ -74,58 +64,89 @@ export default function ContactSection() {
       subtitle="So erreichst du mich"
       className="bg-black"
     >
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-      >
-        {contactLinks.map((link) => (
-          <motion.a
-            key={link.title}
-            href={link.href}
-            target={link.href.startsWith("http") ? "_blank" : undefined}
-            rel={
-              link.href.startsWith("http")
-                ? "noopener noreferrer"
-                : undefined
-            }
-            variants={itemVariants}
-            whileHover={{ y: -8, transition: { duration: 0.2 } }}
-            className="group flex flex-col items-center p-8 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-green-500/50 hover:shadow-xl hover:shadow-green-500/10 transition-all duration-300"
-          >
-            <div className="text-gray-400 group-hover:text-green-400 transition-colors duration-200 mb-4">
-              {link.icon}
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-green-400 transition-colors duration-200">
-              {link.title}
-            </h3>
-            <p className="text-gray-500 text-sm group-hover:text-gray-300 transition-colors duration-200">
-              {link.value}
-            </p>
-          </motion.a>
-        ))}
-      </motion.div>
+      <div className="max-w-4xl mx-auto">
+        {/* Social Links */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ staggerChildren: 0.15 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16"
+        >
+          {socialLinks.map((link) => (
+            <motion.a
+              key={link.title}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={itemVariants}
+              whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              className="group flex flex-col items-center p-8 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-green-500/50 hover:shadow-xl hover:shadow-green-500/10 transition-all duration-300"
+            >
+              <div className="text-gray-400 group-hover:text-green-400 transition-colors duration-200 mb-4">
+                {link.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-green-400 transition-colors duration-200">
+                {link.title}
+              </h3>
+              <p className="text-gray-500 text-sm group-hover:text-gray-300 transition-colors duration-200">
+                {link.value}
+              </p>
+            </motion.a>
+          ))}
+        </motion.div>
 
-      {/* Additional CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="text-center mt-16"
-      >
-        <p className="text-gray-500 text-lg">
-          Auf der Suche nach einem Entwickler?{" "}
-          <a
-            href="mailto:REDACTED"
-            className="text-green-400 hover:text-green-300 transition-colors duration-200 underline underline-offset-4"
+        {/* Kontaktformular */}
+        <motion.form
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col gap-4 bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8"
+        >
+          <h3 className="text-xl font-semibold text-white mb-2">Schreib mir</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder="Name"
+              required
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              className="bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors"
+            />
+            <input
+              type="email"
+              placeholder="E-Mail"
+              required
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className="bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors"
+            />
+          </div>
+          <textarea
+            placeholder="Nachricht"
+            required
+            rows={5}
+            value={form.message}
+            onChange={(e) => setForm({ ...form, message: e.target.value })}
+            className="bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors resize-none"
+          />
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="bg-green-500 hover:bg-green-400 disabled:opacity-50 text-black font-semibold py-3 px-8 rounded-xl transition-colors duration-200"
           >
-            Schreib mir
-          </a>
-        </p>
-      </motion.div>
+            {status === "sending" ? "Wird gesendet..." : "Nachricht senden"}
+          </button>
+          {status === "success" && (
+            <p className="text-green-400 text-sm text-center">Nachricht gesendet! Ich melde mich bald. 👍</p>
+          )}
+          {status === "error" && (
+            <p className="text-red-400 text-sm text-center">Etwas ist schiefgelaufen. Versuch es nochmal.</p>
+          )}
+        </motion.form>
+      </div>
     </SectionWrapper>
   );
 }
