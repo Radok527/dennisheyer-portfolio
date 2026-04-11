@@ -62,7 +62,7 @@ export default function HeroSection() {
             </motion.p>
 
             <motion.p variants={itemVariants} className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-lg">
-              Ich entwickle skalierbare Backend-Systeme, APIs und betreibe produktionsreife Anwendungen.
+              Ich entwickle Backend-Systeme, APIs und bringe eigene Projekte von der Idee bis zum Deployment.
             </motion.p>
 
             <motion.p variants={itemVariants} className="text-gray-500 text-lg">

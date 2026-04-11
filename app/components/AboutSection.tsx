@@ -24,7 +24,7 @@ export default function AboutSection() {
         <div className="bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 md:p-12">
           <div className="text-xl text-gray-300 leading-relaxed">
             <p className="text-center max-w-2xl">
-              Backend Engineer mit Fokus auf skalierbare Systeme. Ich baue und betreibe produktionsreife Anwendungen — von der Architektur bis zum Deployment. Analytisch, lösungsorientiert, mit Hands-on-Mentalität.
+              Backend Engineer mit Leidenschaft für eigene Produkte. Ich baue und betreibe Anwendungen von der ersten Idee bis zum Deployment — von der API-Architektur bis zur Server-Konfiguration. Neugierig, hands-on, immer am Lernen.
             </p>
           </div>
         </div>
