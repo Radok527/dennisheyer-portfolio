@@ -47,7 +47,7 @@ export default function ProjectCard({
             <>
               {/* Image as background layer with CSS filter */}
               <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                className="absolute inset-0 bg-cover bg-buttom bg-no-repeat"
                 style={{
                   backgroundImage: `url(${imageUrl})`,
                   opacity: 0.25,

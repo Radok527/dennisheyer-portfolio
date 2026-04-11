@@ -43,10 +43,7 @@ export default function HeroSection() {
             animate="visible"
             className="space-y-8"
           >
-            <motion.p
-              variants={itemVariants}
-              className="text-green-400 font-medium text-lg"
-            >
+            <motion.p variants={itemVariants} className="text-green-400 font-medium text-lg">
               Hallo, ich bin
             </motion.p>
 
@@ -60,37 +57,21 @@ export default function HeroSection() {
               </span>
             </motion.h1>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-lg"
-            >
+            <motion.p variants={itemVariants} className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-lg">
               Backend Engineer
             </motion.p>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-lg"
-            >
+            <motion.p variants={itemVariants} className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-lg">
               Ich entwickle skalierbare Backend-Systeme, APIs und betreibe produktionsreife Anwendungen.
             </motion.p>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-gray-500 text-lg"
-            >
+            <motion.p variants={itemVariants} className="text-gray-500 text-lg">
               Hannover, Deutschland
             </motion.p>
 
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap gap-4 pt-4"
-            >
-              <Button href="#projects" variant="primary" size="lg">
-                Projekte
-              </Button>
-              <Button href="#contact" variant="secondary" size="lg">
-                Kontakt
-              </Button>
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-4">
+              <Button href="#projects" variant="primary" size="lg">Projekte</Button>
+              <Button href="#contact" variant="secondary" size="lg">Kontakt</Button>
             </motion.div>
           </motion.div>
 
@@ -99,9 +80,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end w-full"
           >
-            <div className="relative w-full max-w-sm">
+            <div className="relative w-full max-w-lg">
 
               <div className="bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl">
 
@@ -111,55 +92,52 @@ export default function HeroSection() {
                     <div className="w-3 h-3 rounded-full bg-red-500" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500" />
                     <div className="w-3 h-3 rounded-full bg-green-500" />
-                    <span className="ml-4 text-gray-400 text-sm font-mono">
-                      dennis@portfolio
-                    </span>
+                    <span className="ml-4 text-gray-400 text-sm font-mono">dennis@portfolio</span>
                   </div>
                 </div>
 
                 {/* Terminal content */}
-                <div className="relative p-6 font-mono text-sm space-y-3">
+                <div className="p-6 font-mono text-sm space-y-3">
 
-                  {/* 🔥 Profile Image Overlay */}
-                  <div className="absolute top-4 right-4">
+                  {/* Profil-Zeile */}
+                  <div className="flex items-center gap-4 pb-3 border-b border-zinc-800">
+                    <div className="flex-1">
+                      <p className="text-gray-500 text-xs mb-1">$ whoami</p>
+                      <p className="text-green-400 font-semibold text-base">Dennis Heyer</p>
+                      <p className="text-gray-400 text-xs mt-1">Backend Engineer · Hannover</p>
+                    </div>
                     <Image
                       src="/assets/Profil_Bild.png"
                       alt="Dennis Heyer"
-                      width={96}
-                      height={96}
-                      className="w-24 h-24 rounded-xl object-cover border border-zinc-700 shadow-lg ring-1 ring-green-500/20 transition-transform duration-300 hover:scale-105"
+                      width={80}
+                      height={80}
+                      className="w-20 h-20 rounded-xl object-cover border border-zinc-700 ring-1 ring-green-500/20 flex-shrink-0"
                     />
                   </div>
 
-                  <p className="text-gray-500">$ wer bin ich</p>
-                  <p className="text-green-400">Dennis Heyer</p>
-
-                  <p className="text-gray-500 mt-4">$ cat skills.txt</p>
-
-                  {/* 👇 Platz für Bild rechts */}
-                  <div className="space-y-1 pr-28">
-                    <p className="text-white">
-                      <span className="text-green-400">→</span> Java / Spring Boot (Backend)
-                    </p>
-                    <p className="text-white">
-                      <span className="text-green-400">→</span> React / TypeScript (Frontend)
-                    </p>
-                    <p className="text-white">
-                      <span className="text-green-400">→</span> Python / FastAPI (KI)
-                    </p>
-                    <p className="text-white">
-                      <span className="text-green-400">→</span> Docker / Kubernetes (DevOps)
-                    </p>
-                    <p className="text-white">
-                      <span className="text-green-400">→</span> Ollama / Embeddings (KI)
-                    </p>
+                  {/* Skills */}
+                  <p className="text-gray-500">$ ls skills/</p>
+                  <div className="space-y-1.5">
+                    {[
+                      "Java / Spring Boot",
+                      "React / TypeScript",
+                      "Python / FastAPI",
+                      "Docker / Kubernetes",
+                      "Ollama / Embeddings",
+                    ].map((skill) => (
+                      <p key={skill} className="text-white">
+                        <span className="text-green-400 mr-2">▸</span>
+                        {skill}
+                      </p>
+                    ))}
                   </div>
 
-                  <p className="text-gray-500">$ _</p>
-
-                  <div className="flex gap-1">
-                    <span className="w-2 h-4 bg-green-500 animate-pulse" />
+                  {/* Prompt */}
+                  <div className="flex items-center gap-1 pt-1">
+                    <span className="text-gray-500">$</span>
+                    <span className="w-2 h-4 bg-green-500 animate-pulse ml-1" />
                   </div>
+
                 </div>
               </div>
 
@@ -168,6 +146,7 @@ export default function HeroSection() {
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-green-500/10 rounded-full blur-xl" />
             </div>
           </motion.div>
+
         </div>
       </div>
 
