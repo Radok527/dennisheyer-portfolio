@@ -3,7 +3,34 @@ import { NextResponse } from 'next/server';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// In-Memory Rate Limiting
+const ipRequests = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = ipRequests.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    ipRequests.set(ip, { count: 1, resetAt: now + 60 * 60 * 1000 });
+    return false;
+  }
+
+  if (entry.count >= 3) return true;
+
+  entry.count++;
+  return false;
+}
+
 export async function POST(req: Request) {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0] ?? "unknown";
+
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "Zu viele Anfragen, bitte später versuchen." },
+      { status: 429 }
+    );
+  }
+
   const { name, email, message, turnstileToken } = await req.json();
 
   // Turnstile verifizieren
