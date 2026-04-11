@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import Image from "next/image";
 import Button from "./Button";
 
 const containerVariants = {
@@ -34,6 +35,7 @@ export default function HeroSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+
           {/* Left Content */}
           <motion.div
             variants={containerVariants}
@@ -92,35 +94,52 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Code/Terminal Aesthetic */}
+          {/* Right Content - Terminal */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="hidden lg:block"
+            className="flex justify-center lg:justify-end"
           >
-            <div className="relative">
-              {/* Terminal window */}
+            <div className="relative w-full max-w-sm">
+
               <div className="bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl">
+
                 {/* Terminal header */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-zinc-800/50 border-b border-zinc-700">
-                  <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <div className="w-3 h-3 rounded-full bg-green-500" />
-                  <span className="ml-4 text-gray-400 text-sm font-mono">
-                    terminal
-                  </span>
+                <div className="flex items-center px-4 py-2.5 bg-zinc-800/50 border-b border-zinc-700">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                    <div className="w-3 h-3 rounded-full bg-green-500" />
+                    <span className="ml-4 text-gray-400 text-sm font-mono">
+                      dennis@portfolio
+                    </span>
+                  </div>
                 </div>
 
                 {/* Terminal content */}
-                <div className="p-6 font-mono text-sm space-y-3">
+                <div className="relative p-6 font-mono text-sm space-y-3">
+
+                  {/* 🔥 Profile Image Overlay */}
+                  <div className="absolute top-4 right-4">
+                    <Image
+                      src="/assets/Profil_Bild.png"
+                      alt="Dennis Heyer"
+                      width={96}
+                      height={96}
+                      className="w-24 h-24 rounded-xl object-cover border border-zinc-700 shadow-lg ring-1 ring-green-500/20 transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+
                   <p className="text-gray-500">$ wer bin ich</p>
                   <p className="text-green-400">Dennis Heyer</p>
-                  <p className="text-gray-500">$ cat skills.txt</p>
-                  <div className="space-y-1">
+
+                  <p className="text-gray-500 mt-4">$ cat skills.txt</p>
+
+                  {/* 👇 Platz für Bild rechts */}
+                  <div className="space-y-1 pr-28">
                     <p className="text-white">
-                      <span className="text-green-400">→</span> Java / Spring
-                      Boot (Backend)
+                      <span className="text-green-400">→</span> Java / Spring Boot (Backend)
                     </p>
                     <p className="text-white">
                       <span className="text-green-400">→</span> React / TypeScript (Frontend)
@@ -135,7 +154,9 @@ export default function HeroSection() {
                       <span className="text-green-400">→</span> Ollama / Embeddings (KI)
                     </p>
                   </div>
+
                   <p className="text-gray-500">$ _</p>
+
                   <div className="flex gap-1">
                     <span className="w-2 h-4 bg-green-500 animate-pulse" />
                   </div>

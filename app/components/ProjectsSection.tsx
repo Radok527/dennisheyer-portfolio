@@ -23,6 +23,7 @@ const projects: Project[] = [
     description: "",
     impact:
       "KI-gestütztes Trainingssystem mit semantischer Übungsanalyse — von Rohdaten bis zu aussagekräftigen Metriken.",
+    imageUrl: "/assets/fitness.png",
     bullets: [
       "Architektur: Schichtenarchitektur (API → Services → Analytics → Infrastructure) — bewusst ohne ORM",
       "Analytics: Deterministische Metriken (1RM, Volume, Plateau-Erkennung) mit NumPy",

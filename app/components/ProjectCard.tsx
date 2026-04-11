@@ -44,12 +44,21 @@ export default function ProjectCard({
         {/* Image area */}
         <div className="relative h-56 overflow-hidden bg-gradient-to-br from-green-900/40 via-zinc-800 to-zinc-900">
           {imageUrl ? (
-            <Image
-              src={imageUrl}
-              alt={title}
-              fill
-              className="object-cover"
-            />
+            <>
+              {/* Image as background layer with CSS filter */}
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{
+                  backgroundImage: `url(${imageUrl})`,
+                  opacity: 0.25,
+                  filter: 'blur(1px)',
+                }}
+              />
+              {/* Dark overlay to ensure text readability */}
+              <div className="absolute inset-0 bg-black/50" />
+              {/* Existing gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500/15 to-transparent" />
+            </>
           ) : (
             <>
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/15 to-transparent" />
