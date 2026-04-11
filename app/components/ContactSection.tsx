@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
+import { Turnstile } from "@marsidev/react-turnstile";
 import SectionWrapper from "./SectionWrapper";
 
 const socialLinks = [
@@ -39,19 +40,22 @@ const itemVariants: Variants = {
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!turnstileToken) return;
     setStatus("sending");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, turnstileToken }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
       setForm({ name: "", email: "", message: "" });
+      setTurnstileToken(null);
     } catch {
       setStatus("error");
     }
@@ -65,7 +69,6 @@ export default function ContactSection() {
       className="bg-black"
     >
       <div className="max-w-4xl mx-auto">
-        {/* Social Links */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -96,7 +99,6 @@ export default function ContactSection() {
           ))}
         </motion.div>
 
-        {/* Kontaktformular */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 20 }}
@@ -132,9 +134,15 @@ export default function ContactSection() {
             onChange={(e) => setForm({ ...form, message: e.target.value })}
             className="bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors resize-none"
           />
+          <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+            onSuccess={(token) => setTurnstileToken(token)}
+            onError={() => setTurnstileToken(null)}
+            onExpire={() => setTurnstileToken(null)}
+          />
           <button
             type="submit"
-            disabled={status === "sending"}
+            disabled={status === "sending" || !turnstileToken}
             className="bg-green-500 hover:bg-green-400 disabled:opacity-50 text-black font-semibold py-3 px-8 rounded-xl transition-colors duration-200"
           >
             {status === "sending" ? "Wird gesendet..." : "Nachricht senden"}
