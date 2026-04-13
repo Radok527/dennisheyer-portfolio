@@ -13,6 +13,7 @@ interface ProjectCardProps {
   link: string;
   highlight?: string;
   variant?: "featured" | "standard";
+  previewUrl?: string;
 }
 
 export default function ProjectCard({
@@ -25,6 +26,7 @@ export default function ProjectCard({
   link,
   highlight,
   variant = "standard",
+  previewUrl,
 }: ProjectCardProps) {
   const isFeatured = variant === "featured";
 
@@ -119,6 +121,62 @@ export default function ProjectCard({
           </div>
         </div>
       </motion.a>
+    );
+  }
+
+  // iframe variant - live preview embedded in card
+  if (previewUrl) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="group rounded-xl bg-zinc-900/50 border border-zinc-800 overflow-hidden hover:border-green-500/50 hover:shadow-lg hover:shadow-green-500/10 transition-all duration-300"
+      >
+        {/* iframe area */}
+        <div className="relative h-52 overflow-hidden">
+          {highlight && (
+            <div className="absolute top-3 right-3 z-10">
+              <span className="px-2.5 py-1 text-xs font-medium rounded-full bg-green-500/20 border border-green-500/50 text-green-400">
+                {highlight}
+              </span>
+            </div>
+          )}
+          <iframe
+            src={previewUrl}
+            title={title}
+            loading="lazy"
+            className="w-full h-full border-0"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="p-5">
+          <h3 className="text-lg font-bold text-white mb-2 group-hover:text-green-400 transition-colors duration-200">
+            {title}
+          </h3>
+          <p className="text-gray-400 mb-4 leading-relaxed text-sm">{description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className="px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-gray-400 text-xs"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-green-400 hover:text-green-300 transition-colors"
+          >
+            Zum Projekt ↗
+          </a>
+        </div>
+      </motion.div>
     );
   }
 

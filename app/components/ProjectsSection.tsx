@@ -14,6 +14,7 @@ interface Project {
   link: string;
   highlight?: string;
   variant?: "featured" | "standard";
+  previewUrl?: string;
 }
 
 const projects: Project[] = [
@@ -34,6 +35,14 @@ const projects: Project[] = [
     techStack: ["React 19", "TypeScript", "FastAPI", "PostgreSQL", "Ollama", "Docker", "Workbox"],
     link: "https://fitness.dennisheyer.dev",
     highlight: "Aktives Projekt",
+  },
+  {
+    title: "Taps",
+    description: "Pixel-Art-Katze mit globalem Shared State — alle Besucher tippen dieselbe Katze. KI-Chat via Minimax mit versteckter Prompt-Injection-Challenge und Leaderboard.",
+    techStack: ["React", "Vite", "FastAPI", "PostgreSQL", "Redis", "WebSocket", "Docker"],
+    link: "https://taps.dennisheyer.dev",
+    previewUrl: "https://taps.dennisheyer.dev",
+    highlight: "Live",
   },
   {
     title: "Portfolio Website",
