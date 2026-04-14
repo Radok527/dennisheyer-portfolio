@@ -51,7 +51,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Deployment
 
-The site runs on a self-hosted **Hetzner VPS** behind **Cloudflare** (DNS, CDN, DDoS protection). Deployments are automated via **GitHub Actions** on every push to `main`.
+The site runs on a self-hosted **Hetzner VPS** behind **Cloudflare** (DNS, CDN, DDoS protection). Quality checks (lint, typecheck, build, tests, security audit) run automatically via **GitHub Actions** on every push to `main`.
 
 ## License
 
