@@ -5,9 +5,8 @@ import Image from "next/image";
 import Button from "./Button";
 
 const containerVariants = {
-  hidden: { opacity: 0 },
+  hidden: {},
   visible: {
-    opacity: 1,
     transition: {
       delayChildren: 0.3,
       staggerChildren: 0.15,
@@ -16,9 +15,8 @@ const containerVariants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { y: 20 },
   visible: {
-    opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: [0, 0, 0.58, 1] as const },
   },
@@ -77,8 +75,8 @@ export default function HeroSection() {
 
           {/* Right Content - Terminal */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ x: 50 }}
+            animate={{ x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex justify-center lg:justify-end w-full"
           >
@@ -156,6 +154,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.5 }}
+        aria-hidden="true"
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <div className="w-6 h-10 rounded-full border-2 border-gray-600 flex justify-center">

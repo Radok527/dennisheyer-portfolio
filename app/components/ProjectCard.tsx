@@ -50,14 +50,13 @@ export default function ProjectCard({
           {imageUrl ? (
             <>
               {/* Image as background layer with CSS filter */}
-              <div
-                className="absolute inset-0 bg-cover bg-buttom bg-no-repeat"
-                style={{
-                  backgroundImage: `url(${imageUrl})`,
-                  backgroundPosition: 'bottom',
-                  opacity: 0.25,
-                  filter: 'blur(1px)',
-                }}
+              <Image
+                src={imageUrl}
+                alt=""
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-bottom"
+                style={{ opacity: 0.25, filter: 'blur(1px)' }}
               />
               {/* Dark overlay to ensure text readability */}
               <div className="absolute inset-0 bg-black/50" />
