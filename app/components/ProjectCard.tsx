@@ -14,6 +14,7 @@ interface ProjectCardProps {
   highlight?: string;
   variant?: "featured" | "standard";
   previewUrl?: string;
+  githubUrl?: string;
 }
 
 export default function ProjectCard({
@@ -27,6 +28,7 @@ export default function ProjectCard({
   highlight,
   variant = "standard",
   previewUrl,
+  githubUrl,
 }: ProjectCardProps) {
   const isFeatured = variant === "featured";
 
@@ -76,11 +78,24 @@ export default function ProjectCard({
               </div>
             </>
           )}
-          {highlight && (
-            <div className="absolute top-4 right-4">
-              <span className="px-3 py-1.5 text-xs font-medium rounded-full bg-green-500/20 border border-green-500/50 text-green-400">
-                {highlight}
-              </span>
+          {(highlight || githubUrl) && (
+            <div className="absolute top-4 right-4 flex items-center gap-2">
+              {highlight && (
+                <span className="px-3 py-1.5 text-xs font-medium rounded-full bg-green-500/20 border border-green-500/50 text-green-400">
+                  {highlight}
+                </span>
+              )}
+              {githubUrl && (
+                <a
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="px-2.5 py-1 text-xs font-medium rounded-full bg-zinc-900/80 border border-zinc-700 text-gray-300 hover:text-green-400 hover:border-green-500/50 transition-colors backdrop-blur-sm"
+                >
+                  GitHub ↗
+                </a>
+              )}
             </div>
           )}
         </div>

@@ -15,6 +15,7 @@ interface Project {
   highlight?: string;
   variant?: "featured" | "standard";
   previewUrl?: string;
+  githubUrl?: string;
 }
 
 const projects: Project[] = [
@@ -35,6 +36,7 @@ const projects: Project[] = [
     techStack: ["React 19", "TypeScript", "FastAPI", "PostgreSQL", "Ollama", "Docker", "Workbox"],
     link: "https://fitness.dennisheyer.dev",
     highlight: "Aktives Projekt",
+    githubUrl: "https://github.com/Radok527/fitness-coaching-engine-public",
   },
   {
     title: "Taps",
