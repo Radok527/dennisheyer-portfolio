@@ -40,7 +40,7 @@ const projects: Project[] = [
     title: "Taps",
     description: "Pixel-Art-Katze mit globalem Shared State — alle Besucher tippen dieselbe Katze. KI-Chat via Minimax mit versteckter Prompt-Injection-Challenge und Leaderboard.",
     techStack: ["React", "Vite", "FastAPI", "PostgreSQL", "Redis", "WebSocket", "Docker"],
-    link: "https://taps.dennisheyer.dev",
+    link: "https://github.com/Radok527/Taps-Cat",
     previewUrl: "https://taps.dennisheyer.dev",
     highlight: "Live",
   },
