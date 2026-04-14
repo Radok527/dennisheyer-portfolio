@@ -111,6 +111,7 @@ export default function HeroSection() {
                       alt="Dennis Heyer"
                       width={80}
                       height={80}
+                      priority
                       className="w-20 h-20 rounded-xl object-cover border border-zinc-700 ring-1 ring-green-500/20 flex-shrink-0"
                     />
                   </div>

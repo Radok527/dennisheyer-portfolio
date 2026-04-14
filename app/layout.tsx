@@ -68,8 +68,8 @@ export default function RootLayout({
     url: "https://dennisheyer.dev",
     jobTitle: "Backend Engineer",
     sameAs: [
-      "https://github.com/dennisheyer",
-      "https://www.linkedin.com/in/dennisheyer",
+      "https://github.com/Radok527",
+      "https://www.linkedin.com/in/dennis-heyer-4a92a6332",
     ],
     knowsAbout: ["Backend Development", "APIs", "AI", "Docker"],
   };

@@ -57,7 +57,7 @@ export default function Button({
 
   if (href) {
     return (
-      <motion.a href={href} className={combinedClasses} {...motionProps}>
+      <motion.a href={href} onClick={handleClick} className={combinedClasses} {...motionProps}>
         {children}
       </motion.a>
     );

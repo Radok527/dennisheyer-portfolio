@@ -17,8 +17,10 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: "smooth" });
+    }, 200); // wait for menu close animation (transition duration: 0.2s)
   };
 
   return (
@@ -52,9 +54,11 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5"
+            className="md:hidden flex flex-col justify-center items-center w-11 h-11 space-y-1.5"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             <span
               className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${
@@ -83,6 +87,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
+            id="mobile-menu"
             className="md:hidden bg-black/95 border-b border-white/10"
           >
             <div className="px-4 py-4 space-y-3">

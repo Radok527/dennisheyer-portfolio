@@ -54,6 +54,7 @@ export default function ProjectCard({
                 className="absolute inset-0 bg-cover bg-buttom bg-no-repeat"
                 style={{
                   backgroundImage: `url(${imageUrl})`,
+                  backgroundPosition: 'bottom',
                   opacity: 0.25,
                   filter: 'blur(1px)',
                 }}
@@ -153,6 +154,7 @@ export default function ProjectCard({
           src={previewUrl}
           title={title}
           loading="lazy"
+          sandbox="allow-scripts allow-same-origin allow-popups"
           className="w-full border-0 block"
           style={{ height: "600px" }}
         />
@@ -167,6 +169,7 @@ export default function ProjectCard({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`${title} öffnen`}
             className="px-2.5 py-1 text-xs font-medium rounded-full bg-zinc-900/80 border border-zinc-700 text-gray-300 hover:text-green-400 hover:border-green-500/50 transition-colors backdrop-blur-sm"
           >
             ↗
@@ -196,6 +199,7 @@ export default function ProjectCard({
             src={imageUrl}
             alt={title}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
         ) : (
